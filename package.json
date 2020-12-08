@@ -1,0 +1,21 @@
+{
+    "name": "@softvisio/uws",
+    "version": "0.0.0",
+    "private": true,
+    "description": "uWebsocket.js re-packed",
+    "exports": {
+        ".": "./uws.js"
+    },
+    "main": "uws.js",
+    "types": "./index.d.ts",
+    "scripts": {
+        "lint": "softvisio-cli lint"
+    },
+    "engines": {
+        "node": ">=14.7.0",
+        "npm": ">=6.14.7"
+    },
+    "lint": [
+        "**"
+    ]
+}
