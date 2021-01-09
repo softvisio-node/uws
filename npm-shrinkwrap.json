@@ -5,8 +5,8 @@
     "requires": true,
     "dependencies": {
         "uWebSockets.js": {
-            "version": "github:uNetworking/uWebSockets.js#bd720c90ff8b90f478d918c1cbe3f1dcbc3a765b",
-            "from": "github:uNetworking/uWebSockets.js#v18.11.0",
+            "version": "github:uNetworking/uWebSockets.js#de4a275e5d2ca352367114b905b4cbddc4a272a9",
+            "from": "github:uNetworking/uWebSockets.js#v18.13.0",
             "dev": true
         }
     }
