@@ -21,7 +21,7 @@
         "lint": "softvisio-cli lint"
     },
     "devDependencies": {
-        "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.11.0"
+        "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.13.0"
     },
     "engines": {
         "node": ">=14.7.0",
