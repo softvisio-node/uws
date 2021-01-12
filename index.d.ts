@@ -1,3 +1,17 @@
+/*
+ * Authored by Alex Hultman, 2018-2021.
+ * Intellectual property of third-party.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 /** Native type representing a raw uSockets struct us_listen_socket.
  * Careful with this one, it is entirely unchecked and native so invalid usage will blow up.
  */
@@ -191,8 +205,10 @@ export interface HttpRequest {
     getUrl() : string;
     /** Returns the HTTP method, useful for "any" routes. */
     getMethod() : string;
-    /** Returns the part of URL after ? sign or empty string. */
+    /** Returns the raw querystring (the part of URL after ? sign) or empty string. */
     getQuery() : string;
+    /** Returns a decoded query parameter value or empty string. */
+    getQuery(key: string) : string;
     /** Loops over all headers. */
     forEach(cb: (key: string, value: string) => void) : void;
     /** Setting yield to true is to say that this route handler did not handle the route, causing the router to continue looking for a matching route handler, or fail. */
@@ -201,15 +217,15 @@ export interface HttpRequest {
 
 /** A structure holding settings and handlers for a WebSocket URL route handler. */
 export interface WebSocketBehavior {
-    /** Maximum length of received message. If a client tries to send you a message larger than this, the connection is immediately closed. */
+    /** Maximum length of received message. If a client tries to send you a message larger than this, the connection is immediately closed. Defaults to 16 * 1024. */
     maxPayloadLength?: number;
     /** Maximum amount of seconds that may pass without sending or getting a message. Connection is closed if this timeout passes. Resolution (granularity) for timeouts are typically 4 seconds, rounded to closest.
-     * Disable by leaving 0.
+     * Disable by using 0. Defaults to 120.
      */
     idleTimeout?: number;
-    /** What permessage-deflate compression to use. uWS.DISABLED, uWS.SHARED_COMPRESSOR or any of the uWS.DEDICATED_COMPRESSOR_xxxKB. */
+    /** What permessage-deflate compression to use. uWS.DISABLED, uWS.SHARED_COMPRESSOR or any of the uWS.DEDICATED_COMPRESSOR_xxxKB. Defaults to uWS.DISABLED. */
     compression?: CompressOptions;
-    /** Maximum length of allowed backpressure per socket when PUBLISHING messages (does not apply to ws.send). Slow receivers with too high backpressure will be skipped until they catch up or timeout. */
+    /** Maximum length of allowed backpressure per socket when publishing or sending messages. Slow receivers with too high backpressure will be skipped until they catch up or timeout. Defaults to 1024 * 1024. */
     maxBackpressure?: number;
     /** Upgrade handler used to intercept HTTP upgrade requests and potentially upgrade to WebSocket.
      * See UpgradeAsync and UpgradeSync example files.
@@ -241,12 +257,19 @@ export interface AppOptions {
     ssl_prefer_low_memory_usage?: boolean;
 }
 
+export enum ListenOptions {
+  LIBUS_LISTEN_DEFAULT = 0,
+  LIBUS_LISTEN_EXCLUSIVE_PORT = 1
+}
+
 /** TemplatedApp is either an SSL or non-SSL app. See App for more info, read user manual. */
 export interface TemplatedApp {
     /** Listens to hostname & port. Callback hands either false or a listen socket. */
     listen(host: RecognizedString, port: number, cb: (listenSocket: us_listen_socket) => void): TemplatedApp;
     /** Listens to port. Callback hands either false or a listen socket. */
     listen(port: number, cb: (listenSocket: any) => void): TemplatedApp;
+    /** Listens to port and sets Listen Options. Callback hands either false or a listen socket. */
+    listen(port: number, options: ListenOptions, cb: (listenSocket: us_listen_socket | false) => void): TemplatedApp;
     /** Registers an HTTP GET handler matching specified URL pattern. */
     get(pattern: RecognizedString, handler: (res: HttpResponse, req: HttpRequest) => void) : TemplatedApp;
     /** Registers an HTTP POST handler matching specified URL pattern. */
@@ -283,6 +306,16 @@ export function SSLApp(options: AppOptions): TemplatedApp;
 
 /** Closes a uSockets listen socket. */
 export function us_listen_socket_close(listenSocket: us_listen_socket): void;
+
+export interface MultipartField {
+    data: ArrayBuffer;
+    name: string;
+    type?: string;
+    filename?: string;
+}
+
+/** Takes a POSTed body and contentType, and returns an array of parts if the request is a multipart request */
+export function getParts(body: RecognizedString, contentType: RecognizedString): MultipartField[] | undefined;
 
 /** WebSocket compression options */
 export type CompressOptions = number;
