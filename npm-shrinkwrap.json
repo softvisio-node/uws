@@ -1,12 +1,12 @@
 {
     "name": "@softvisio/uws",
-    "version": "0.6.1",
+    "version": "0.6.2",
     "lockfileVersion": 2,
     "requires": true,
     "packages": {
         "": {
             "name": "@softvisio/uws",
-            "version": "0.6.1",
+            "version": "0.6.2",
             "license": "ISC",
             "engines": {
                 "node": ">=15.7.0",
