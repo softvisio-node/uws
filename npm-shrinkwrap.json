@@ -6,26 +6,12 @@
     "packages": {
         "": {
             "name": "@softvisio/uws",
-            "version": "0.5.0",
+            "version": "0.6.0",
             "license": "ISC",
-            "devDependencies": {
-                "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.13.0"
-            },
             "engines": {
-                "node": ">=14.7.0",
-                "npm": ">=6.14.7"
+                "node": ">=15.7.0",
+                "npm": ">=7.4.3"
             }
-        },
-        "node_modules/uWebSockets.js": {
-            "resolved": "git+ssh://git@github.com/uNetworking/uWebSockets.js.git#de4a275e5d2ca352367114b905b4cbddc4a272a9",
-            "dev": true
-        }
-    },
-    "dependencies": {
-        "uWebSockets.js": {
-            "version": "git+ssh://git@github.com/uNetworking/uWebSockets.js.git#de4a275e5d2ca352367114b905b4cbddc4a272a9",
-            "dev": true,
-            "from": "uWebSockets.js@github:uNetworking/uWebSockets.js#v18.13.0"
         }
     }
 }
