@@ -6,7 +6,7 @@
     "packages": {
         "": {
             "name": "@softvisio/uws",
-            "version": "0.6.0",
+            "version": "0.6.1",
             "license": "ISC",
             "engines": {
                 "node": ">=15.7.0",
