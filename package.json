@@ -20,9 +20,12 @@
     "scripts": {
         "lint": "softvisio-cli lint"
     },
+    "devDependencies": {
+        "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.13.0"
+    },
     "engines": {
         "node": ">=15.7.0",
-        "npm": ">=7"
+        "npm": ">=7.4.3"
     },
     "lint": [
         "**"
