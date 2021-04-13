@@ -20,7 +20,8 @@
 export interface us_listen_socket {}
 
 /* Native type representing a raw uSockets struct us_socket_context_t.
- * Used while upgrading a WebSocket manually. */
+ * Used while upgrading a WebSocket manually.
+ */
 export interface us_socket_context_t {}
 
 /* Recognized string types, things C++ can read and understand as strings.
@@ -62,7 +63,8 @@ export interface WebSocket {
      */
     close(): WebSocket;
 
-    /* Sends a ping control message. Returns true on success in similar ways as WebSocket.send does (regarding backpressure). This helper function correlates to WebSocket::send(message, uWS::OpCode::PING, ...) in C++. */
+    /* Sends a ping control message. Returns true on success in similar ways as WebSocket.send does (regarding backpressure). This helper function correlates to WebSocket::send(message, uWS::OpCode::PING, ...) in C++.
+     */
     ping( message?: RecognizedString ): boolean;
 
     /* Subscribe to a topic in MQTT syntax.
