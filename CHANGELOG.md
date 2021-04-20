@@ -1,3 +1,9 @@
+## 1.2.2 (2021-04-20)
+
+### Raw commits log
+
+-   node v15 removed;
+
 ## 1.2.1 (2021-04-20)
 
 ### Raw commits log
