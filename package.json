@@ -21,8 +21,8 @@
         "lint": "softvisio-cli lint"
     },
     "engines": {
-        "node": ">=15.7.0",
-        "npm": ">=7.4.3"
+        "node": ">=16.0.0",
+        "npm": ">=7.10.0"
     },
     "lint": [
         "**"
