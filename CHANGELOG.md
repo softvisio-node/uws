@@ -1,3 +1,9 @@
+## 1.2.5 (2021-05-24)
+
+### Raw commits log
+
+-   index.d.ts linted;
+
 ## 1.2.4 (2021-05-19)
 
 ### Raw commits log
