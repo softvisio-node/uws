@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-/* Native type representing a raw uSockets struct us_listen_socket.
+/** Native type representing a raw uSockets struct us_listen_socket.
  * Careful with this one, it is entirely unchecked and native so invalid usage will blow up.
  */
 export interface us_listen_socket {}
 
-/* Native type representing a raw uSockets struct us_socket_context_t.
+/** Native type representing a raw uSockets struct us_socket_context_t.
  * Used while upgrading a WebSocket manually.
  */
 export interface us_socket_context_t {}
 
-/* Recognized string types, things C++ can read and understand as strings.
+/** Recognized string types, things C++ can read and understand as strings.
  * "String" does not have to mean "text", it can also be "binary".
  *
  * Ironically, JavaScript strings are the least performant of all options, to pass or receive to/from C++.
@@ -36,38 +36,37 @@ export interface us_socket_context_t {}
  */
 export type RecognizedString = string | ArrayBuffer | Uint8Array | Int8Array | Uint16Array | Int16Array | Uint32Array | Int32Array | Float32Array | Float64Array;
 
-/* A WebSocket connection that is valid from open to close event.
+/** A WebSocket connection that is valid from open to close event.
  * Read more about this in the user manual.
  */
 export interface WebSocket {
 
-    /* Sends a message. Make sure to check getBufferedAmount() before sending. Returns true for success, false for built up backpressure that will drain when time is given.
+    /** Sends a message. Make sure to check getBufferedAmount() before sending. Returns true for success, false for built up backpressure that will drain when time is given.
      * Returning false does not mean nothing was sent, it only means backpressure was built up. This you can check by calling getBufferedAmount() afterwards.
      *
      * Make sure you properly understand the concept of backpressure. Check the backpressure example file.
      */
     send( message: RecognizedString, isBinary?: boolean, compress?: boolean ): boolean;
 
-    /* Returns the bytes buffered in backpressure. This is similar to the bufferedAmount property in the browser counterpart.
+    /** Returns the bytes buffered in backpressure. This is similar to the bufferedAmount property in the browser counterpart.
      * Check backpressure example.
      */
     getBufferedAmount(): number;
 
-    /* Gracefully closes this WebSocket. Immediately calls the close handler.
+    /** Gracefully closes this WebSocket. Immediately calls the close handler.
      * A WebSocket close message is sent with code and shortMessage.
      */
     end( code?: number, shortMessage?: RecognizedString ): WebSocket;
 
-    /* Forcefully closes this WebSocket. Immediately calls the close handler.
+    /** Forcefully closes this WebSocket. Immediately calls the close handler.
      * No WebSocket close message is sent.
      */
     close(): WebSocket;
 
-    /* Sends a ping control message. Returns true on success in similar ways as WebSocket.send does (regarding backpressure). This helper function correlates to WebSocket::send(message, uWS::OpCode::PING, ...) in C++.
-     */
+    /** Sends a ping control message. Returns true on success in similar ways as WebSocket.send does (regarding backpressure). This helper function correlates to WebSocket::send(message, uWS::OpCode::PING, ...) in C++. */
     ping( message?: RecognizedString ): boolean;
 
-    /* Subscribe to a topic in MQTT syntax.
+    /** Subscribe to a topic in MQTT syntax.
      *
      * MQTT syntax includes things like "root/child/+/grandchild" where "+" is a
      * wildcard and "root/#" where "#" is a terminating wildcard.
@@ -76,16 +75,16 @@ export interface WebSocket {
      */
     subscribe( topic: RecognizedString ): boolean;
 
-    /* Unsubscribe from a topic. Returns true on success, if the WebSocket was subscribed. */
+    /** Unsubscribe from a topic. Returns true on success, if the WebSocket was subscribed. */
     unsubscribe( topic: RecognizedString ): boolean;
 
-    /* Returns whether this websocket is subscribed to topic. */
+    /** Returns whether this websocket is subscribed to topic. */
     isSubscribed( topic: RecognizedString ): boolean;
 
-    /* Returns a list of topics this websocket is subscribed to. */
+    /** Returns a list of topics this websocket is subscribed to. */
     getTopics(): string[];
 
-    /* Publish a message to a topic in MQTT syntax. You cannot publish using wildcards, only fully specified topics. Just like with MQTT.
+    /** Publish a message to a topic in MQTT syntax. You cannot publish using wildcards, only fully specified topics. Just like with MQTT.
      *
      * "parent/child" kind of tree is allowed, but not "parent/#" kind of wildcard publishing.
      *
@@ -97,10 +96,10 @@ export interface WebSocket {
      */
     publish( topic: RecognizedString, message: RecognizedString, isBinary?: boolean, compress?: boolean ): boolean;
 
-    /* See HttpResponse.cork. Takes a function in which the socket is corked (packing many sends into one single syscall/SSL block) */
+    /** See HttpResponse.cork. Takes a function in which the socket is corked (packing many sends into one single syscall/SSL block) */
     cork( cb: () => void ): void;
 
-    /* Returns the remote IP address. Note that the returned IP is binary, not text.
+    /** Returns the remote IP address. Note that the returned IP is binary, not text.
      *
      * IPv4 is 4 byte long and can be converted to text by printing every byte as a digit between 0 and 255.
      * IPv6 is 16 byte long and can be converted to text in similar ways, but you typically print digits in HEX.
@@ -109,17 +108,17 @@ export interface WebSocket {
      */
     getRemoteAddress(): ArrayBuffer;
 
-    /* Returns the remote IP address as text. See RecognizedString. */
+    /** Returns the remote IP address as text. See RecognizedString. */
     getRemoteAddressAsText(): ArrayBuffer;
 
-    /* Arbitrary user data may be attached to this object. In C++ this is done by using getUserData(). */
+    /** Arbitrary user data may be attached to this object. In C++ this is done by using getUserData(). */
     [key: string]: any;
 }
 
-/* An HttpResponse is valid until either onAborted callback or any of the .end/.tryEnd calls succeed. You may attach user data to this object. */
+/** An HttpResponse is valid until either onAborted callback or any of the .end/.tryEnd calls succeed. You may attach user data to this object. */
 export interface HttpResponse {
 
-    /* Writes the HTTP status message such as "200 OK".
+    /** Writes the HTTP status message such as "200 OK".
      * This has to be called first in any response, otherwise
      * it will be called automatically with "200 OK".
      *
@@ -135,54 +134,55 @@ export interface HttpResponse {
      */
     writeStatus( status: RecognizedString ): HttpResponse;
 
-    /* Writes key and value to HTTP response.
+    /** Writes key and value to HTTP response.
      * See writeStatus and corking.
      */
     writeHeader( key: RecognizedString, value: RecognizedString ): HttpResponse;
 
-    /* Enters or continues chunked encoding mode. Writes part of the response. End with zero length write. */
+    /** Enters or continues chunked encoding mode. Writes part of the response. End with zero length write. */
     write( chunk: RecognizedString ): HttpResponse;
 
-    /* Ends this response by copying the contents of body. */
+    /** Ends this response by copying the contents of body. */
     end( body?: RecognizedString ): HttpResponse;
 
-    /* Ends this response, or tries to, by streaming appropriately sized chunks of body. Use in conjunction with onWritable. Returns tuple [ok, hasResponded].*/
+    /** Ends this response, or tries to, by streaming appropriately sized chunks of body. Use in conjunction with onWritable. Returns tuple [ok, hasResponded]. */
     tryEnd( fullBodyOrChunk: RecognizedString, totalSize: number ): [boolean, boolean];
 
-    /* Immediately force closes the connection. Any onAborted callback will run. */
+    /** Immediately force closes the connection. Any onAborted callback will run. */
     close(): HttpResponse;
 
-    /* Returns the global byte write offset for this response. Use with onWritable. */
+    /** Returns the global byte write offset for this response. Use with onWritable. */
     getWriteOffset(): number;
 
-    /* Registers a handler for writable events. Continue failed write attempts in here.
+    /** Registers a handler for writable events. Continue failed write attempts in here.
      * You MUST return true for success, false for failure.
      * Writing nothing is always success, so by default you must return true.
      */
     onWritable( handler: ( offset: number ) => boolean ): HttpResponse;
 
-    /* Every HttpResponse MUST have an attached abort handler IF you do not respond
+    /** Every HttpResponse MUST have an attached abort handler IF you do not respond
      * to it immediately inside of the callback. Returning from an Http request handler
      * without attaching (by calling onAborted) an abort handler is ill-use and will termiante.
-     * When this event emits, the response has been aborted and may not be used. */
+     * When this event emits, the response has been aborted and may not be used.
+     */
     onAborted( handler: () => void ): HttpResponse;
 
-    /* Handler for reading data from POST and such requests. You MUST copy the data of chunk if isLast is not true. We Neuter ArrayBuffers on return, making it zero length.*/
+    /** Handler for reading data from POST and such requests. You MUST copy the data of chunk if isLast is not true. We Neuter ArrayBuffers on return, making it zero length. */
     onData( handler: ( chunk: ArrayBuffer, isLast: boolean ) => void ): HttpResponse;
 
-    /* Returns the remote IP address in binary format (4 or 16 bytes). */
+    /** Returns the remote IP address in binary format (4 or 16 bytes). */
     getRemoteAddress(): ArrayBuffer;
 
-    /* Returns the remote IP address as text. */
+    /** Returns the remote IP address as text. */
     getRemoteAddressAsText(): ArrayBuffer;
 
-    /* Returns the remote IP address in binary format (4 or 16 bytes), as reported by the PROXY Protocol v2 compatible proxy. */
+    /** Returns the remote IP address in binary format (4 or 16 bytes), as reported by the PROXY Protocol v2 compatible proxy. */
     getProxiedRemoteAddress(): ArrayBuffer;
 
-    /* Returns the remote IP address as text, as reported by the PROXY Protocol v2 compatible proxy. */
+    /** Returns the remote IP address as text, as reported by the PROXY Protocol v2 compatible proxy. */
     getProxiedRemoteAddressAsText(): ArrayBuffer;
 
-    /* Corking a response is a performance improvement in both CPU and network, as you ready the IO system for writing multiple chunks at once.
+    /** Corking a response is a performance improvement in both CPU and network, as you ready the IO system for writing multiple chunks at once.
      * By default, you're corked in the immediately executing top portion of the route handler. In all other cases, such as when returning from
      * await, or when being called back from an async database request or anything that isn't directly executing in the route handler, you'll want
      * to cork before calling writeStatus, writeHeader or just write. Corking takes a callback in which you execute the writeHeader, writeStatus and
@@ -197,83 +197,83 @@ export interface HttpResponse {
      */
     cork( cb: () => void ): void;
 
-    /* Upgrades a HttpResponse to a WebSocket. See UpgradeAsync, UpgradeSync example files. */
+    /** Upgrades a HttpResponse to a WebSocket. See UpgradeAsync, UpgradeSync example files. */
     upgrade<T>( userData: T, secWebSocketKey: RecognizedString, secWebSocketProtocol: RecognizedString, secWebSocketExtensions: RecognizedString, context: us_socket_context_t ): void;
 
-    /* Arbitrary user data may be attached to this object */
+    /** Arbitrary user data may be attached to this object */
     [key: string]: any;
 }
 
-/* An HttpRequest is stack allocated and only accessible during the callback invocation. */
+/** An HttpRequest is stack allocated and only accessible during the callback invocation. */
 export interface HttpRequest {
 
-    /* Returns the lowercased header value or empty string. */
+    /** Returns the lowercased header value or empty string. */
     getHeader( lowerCaseKey: RecognizedString ): string;
 
-    /* Returns the parsed parameter at index. Corresponds to route. */
+    /** Returns the parsed parameter at index. Corresponds to route. */
     getParameter( index: number ): string;
 
-    /* Returns the URL including initial /slash */
+    /** Returns the URL including initial /slash */
     getUrl(): string;
 
-    /* Returns the HTTP method, useful for "any" routes. */
+    /** Returns the HTTP method, useful for "any" routes. */
     getMethod(): string;
 
-    /* Returns the raw querystring (the part of URL after ? sign) or empty string. */
+    /** Returns the raw querystring (the part of URL after ? sign) or empty string. */
     getQuery(): string;
 
-    /* Returns a decoded query parameter value or empty string. */
+    /** Returns a decoded query parameter value or empty string. */
     getQuery( key: string ): string;
 
-    /* Loops over all headers. */
+    /** Loops over all headers. */
     forEach( cb: ( key: string, value: string ) => void ): void;
 
-    /* Setting yield to true is to say that this route handler did not handle the route, causing the router to continue looking for a matching route handler, or fail. */
+    /** Setting yield to true is to say that this route handler did not handle the route, causing the router to continue looking for a matching route handler, or fail. */
     setYield( yield: boolean ): HttpRequest;
 }
 
-/* A structure holding settings and handlers for a WebSocket URL route handler. */
+/** A structure holding settings and handlers for a WebSocket URL route handler. */
 export interface WebSocketBehavior {
 
-    /* Maximum length of received message. If a client tries to send you a message larger than this, the connection is immediately closed. Defaults to 16 * 1024. */
+    /** Maximum length of received message. If a client tries to send you a message larger than this, the connection is immediately closed. Defaults to 16 * 1024. */
     maxPayloadLength?: number;
 
-    /* Maximum amount of seconds that may pass without sending or getting a message. Connection is closed if this timeout passes. Resolution (granularity) for timeouts are typically 4 seconds, rounded to closest.
+    /** Maximum amount of seconds that may pass without sending or getting a message. Connection is closed if this timeout passes. Resolution (granularity) for timeouts are typically 4 seconds, rounded to closest.
      * Disable by using 0. Defaults to 120.
      */
     idleTimeout?: number;
 
-    /* What permessage-deflate compression to use. uWS.DISABLED, uWS.SHARED_COMPRESSOR or any of the uWS.DEDICATED_COMPRESSOR_xxxKB. Defaults to uWS.DISABLED. */
+    /** What permessage-deflate compression to use. uWS.DISABLED, uWS.SHARED_COMPRESSOR or any of the uWS.DEDICATED_COMPRESSOR_xxxKB. Defaults to uWS.DISABLED. */
     compression?: CompressOptions;
 
-    /* Maximum length of allowed backpressure per socket when publishing or sending messages. Slow receivers with too high backpressure will be skipped until they catch up or timeout. Defaults to 1024 * 1024. */
+    /** Maximum length of allowed backpressure per socket when publishing or sending messages. Slow receivers with too high backpressure will be skipped until they catch up or timeout. Defaults to 1024 * 1024. */
     maxBackpressure?: number;
 
-    /* Upgrade handler used to intercept HTTP upgrade requests and potentially upgrade to WebSocket.
+    /** Upgrade handler used to intercept HTTP upgrade requests and potentially upgrade to WebSocket.
      * See UpgradeAsync and UpgradeSync example files.
      */
     upgrade?: ( res: HttpResponse, req: HttpRequest, context: us_socket_context_t ) => void;
 
-    /* Handler for new WebSocket connection. WebSocket is valid from open to close, no errors. */
+    /** Handler for new WebSocket connection. WebSocket is valid from open to close, no errors. */
     open?: ( ws: WebSocket ) => void;
 
-    /* Handler for a WebSocket message. Messages are given as ArrayBuffer no matter if they are binary or not. Given ArrayBuffer is valid during the lifetime of this callback (until first await or return) and will be neutered. */
+    /** Handler for a WebSocket message. Messages are given as ArrayBuffer no matter if they are binary or not. Given ArrayBuffer is valid during the lifetime of this callback (until first await or return) and will be neutered. */
     message?: ( ws: WebSocket, message: ArrayBuffer, isBinary: boolean ) => void;
 
-    /* Handler for when WebSocket backpressure drains. Check ws.getBufferedAmount(). Use this to guide / drive your backpressure throttling. */
+    /** Handler for when WebSocket backpressure drains. Check ws.getBufferedAmount(). Use this to guide / drive your backpressure throttling. */
     drain?: ( ws: WebSocket ) => void;
 
-    /* Handler for close event, no matter if error, timeout or graceful close. You may not use WebSocket after this event. Do not send on this WebSocket from within here, it is closed. */
+    /** Handler for close event, no matter if error, timeout or graceful close. You may not use WebSocket after this event. Do not send on this WebSocket from within here, it is closed. */
     close?: ( ws: WebSocket, code: number, message: ArrayBuffer ) => void;
 
-    /* Handler for received ping control message. You do not need to handle this, pong messages are automatically sent as per the standard. */
+    /** Handler for received ping control message. You do not need to handle this, pong messages are automatically sent as per the standard. */
     ping?: ( ws: WebSocket, message: ArrayBuffer ) => void;
 
-    /* Handler for received pong control message. */
+    /** Handler for received pong control message. */
     pong?: ( ws: WebSocket, message: ArrayBuffer ) => void;
 }
 
-/* Options used when constructing an app. Especially for SSLApp.
+/** Options used when constructing an app. Especially for SSLApp.
  * These are options passed directly to uSockets, C layer.
  */
 export interface AppOptions {
@@ -282,7 +282,7 @@ export interface AppOptions {
     passphrase?: RecognizedString;
     dh_params_file_name?: RecognizedString;
 
-    /* This translates to SSL_MODE_RELEASE_BUFFERS */
+    /** This translates to SSL_MODE_RELEASE_BUFFERS */
     ssl_prefer_low_memory_usage?: boolean;
 }
 
@@ -291,67 +291,67 @@ export enum ListenOptions {
     LIBUS_LISTEN_EXCLUSIVE_PORT = 1,
 }
 
-/* TemplatedApp is either an SSL or non-SSL app. See App for more info, read user manual. */
+/** TemplatedApp is either an SSL or non-SSL app. See App for more info, read user manual. */
 export interface TemplatedApp {
 
-    /* Listens to hostname & port. Callback hands either false or a listen socket. */
+    /** Listens to hostname & port. Callback hands either false or a listen socket. */
     listen( host: RecognizedString, port: number, cb: ( listenSocket: us_listen_socket ) => void ): TemplatedApp;
 
-    /* Listens to port. Callback hands either false or a listen socket. */
+    /** Listens to port. Callback hands either false or a listen socket. */
     listen( port: number, cb: ( listenSocket: any ) => void ): TemplatedApp;
 
-    /* Listens to port and sets Listen Options. Callback hands either false or a listen socket. */
+    /** Listens to port and sets Listen Options. Callback hands either false or a listen socket. */
     listen( port: number, options: ListenOptions, cb: ( listenSocket: us_listen_socket | false ) => void ): TemplatedApp;
 
-    /* Registers an HTTP GET handler matching specified URL pattern. */
+    /** Registers an HTTP GET handler matching specified URL pattern. */
     get( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
 
-    /* Registers an HTTP POST handler matching specified URL pattern. */
+    /** Registers an HTTP POST handler matching specified URL pattern. */
     post( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
 
-    /* Registers an HTTP OPTIONS handler matching specified URL pattern. */
+    /** Registers an HTTP OPTIONS handler matching specified URL pattern. */
     options( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
 
-    /* Registers an HTTP DELETE handler matching specified URL pattern. */
+    /** Registers an HTTP DELETE handler matching specified URL pattern. */
     del( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
 
-    /* Registers an HTTP PATCH handler matching specified URL pattern. */
+    /** Registers an HTTP PATCH handler matching specified URL pattern. */
     patch( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
 
-    /* Registers an HTTP PUT handler matching specified URL pattern. */
+    /** Registers an HTTP PUT handler matching specified URL pattern. */
     put( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
 
-    /* Registers an HTTP HEAD handler matching specified URL pattern. */
+    /** Registers an HTTP HEAD handler matching specified URL pattern. */
     head( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
 
-    /* Registers an HTTP CONNECT handler matching specified URL pattern. */
+    /** Registers an HTTP CONNECT handler matching specified URL pattern. */
     connect( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
 
-    /* Registers an HTTP TRACE handler matching specified URL pattern. */
+    /** Registers an HTTP TRACE handler matching specified URL pattern. */
     trace( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
 
-    /* Registers an HTTP handler matching specified URL pattern on any HTTP method. */
+    /** Registers an HTTP handler matching specified URL pattern on any HTTP method. */
     any( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
 
-    /* Registers a handler matching specified URL pattern where WebSocket upgrade requests are caught. */
+    /** Registers a handler matching specified URL pattern where WebSocket upgrade requests are caught. */
     ws( pattern: RecognizedString, behavior: WebSocketBehavior ): TemplatedApp;
 
-    /* Publishes a message under topic, for all WebSockets under this app. See WebSocket.publish. */
+    /** Publishes a message under topic, for all WebSockets under this app. See WebSocket.publish. */
     publish( topic: RecognizedString, message: RecognizedString, isBinary?: boolean, compress?: boolean ): boolean;
 
-    /* Returns number of subscribers for this topic. */
+    /** Returns number of subscribers for this topic. */
     numSubscribers( topic: RecognizedString ): number;
 }
 
-/* Constructs a non-SSL app. An app is your starting point where you attach behavior to URL routes.
+/** Constructs a non-SSL app. An app is your starting point where you attach behavior to URL routes.
  * This is also where you listen and run your app, set any SSL options (in case of SSLApp) and the like.
  */
 export function App( options?: AppOptions ): TemplatedApp;
 
-/* Constructs an SSL app. See App. */
+/** Constructs an SSL app. See App. */
 export function SSLApp( options: AppOptions ): TemplatedApp;
 
-/* Closes a uSockets listen socket. */
+/** Closes a uSockets listen socket. */
 export function us_listen_socket_close( listenSocket: us_listen_socket ): void;
 
 export interface MultipartField {
@@ -361,38 +361,38 @@ export interface MultipartField {
     filename?: string;
 }
 
-/* Takes a POSTed body and contentType, and returns an array of parts if the request is a multipart request */
+/** Takes a POSTed body and contentType, and returns an array of parts if the request is a multipart request */
 export function getParts( body: RecognizedString, contentType: RecognizedString ): MultipartField[] | undefined;
 
-/* WebSocket compression options */
+/** WebSocket compression options */
 export type CompressOptions = number;
 
-/* No compression (always a good idea if you operate using an efficient binary protocol) */
+/** No compression (always a good idea if you operate using an efficient binary protocol) */
 export var DISABLED: CompressOptions;
 
-/* Zero memory overhead compression (recommended for pub/sub where same message is sent to many receivers) */
+/** Zero memory overhead compression (recommended for pub/sub where same message is sent to many receivers) */
 export var SHARED_COMPRESSOR: CompressOptions;
 
-/* Sliding dedicated compress window, requires 3KB of memory per socket */
+/** Sliding dedicated compress window, requires 3KB of memory per socket */
 export var DEDICATED_COMPRESSOR_3KB: CompressOptions;
 
-/* Sliding dedicated compress window, requires 4KB of memory per socket */
+/** Sliding dedicated compress window, requires 4KB of memory per socket */
 export var DEDICATED_COMPRESSOR_4KB: CompressOptions;
 
-/* Sliding dedicated compress window, requires 8KB of memory per socket */
+/** Sliding dedicated compress window, requires 8KB of memory per socket */
 export var DEDICATED_COMPRESSOR_8KB: CompressOptions;
 
-/* Sliding dedicated compress window, requires 16KB of memory per socket */
+/** Sliding dedicated compress window, requires 16KB of memory per socket */
 export var DEDICATED_COMPRESSOR_16KB: CompressOptions;
 
-/* Sliding dedicated compress window, requires 32KB of memory per socket */
+/** Sliding dedicated compress window, requires 32KB of memory per socket */
 export var DEDICATED_COMPRESSOR_32KB: CompressOptions;
 
-/* Sliding dedicated compress window, requires 64KB of memory per socket */
+/** Sliding dedicated compress window, requires 64KB of memory per socket */
 export var DEDICATED_COMPRESSOR_64KB: CompressOptions;
 
-/* Sliding dedicated compress window, requires 128KB of memory per socket */
+/** Sliding dedicated compress window, requires 128KB of memory per socket */
 export var DEDICATED_COMPRESSOR_128KB: CompressOptions;
 
-/* Sliding dedicated compress window, requires 256KB of memory per socket */
+/** Sliding dedicated compress window, requires 256KB of memory per socket */
 export var DEDICATED_COMPRESSOR_256KB: CompressOptions;
