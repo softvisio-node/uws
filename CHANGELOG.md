@@ -1,48 +1,48 @@
 ## 1.2.6 (2021-06-01)
 
-### Raw commits log
+**Raw commits log**
 
 -   lint config removed;
 
 ## 1.2.5 (2021-05-24)
 
-### Raw commits log
+**Raw commits log**
 
 -   index.d.ts linted;
 
 ## 1.2.4 (2021-05-19)
 
-### Raw commits log
+**Raw commits log**
 
 -   lint script removed;
 
 ## 1.2.3 (2021-04-20)
 
-### Raw commits log
+**Raw commits log**
 
 -   engines updated;
 
 ## 1.2.2 (2021-04-20)
 
-### Raw commits log
+**Raw commits log**
 
 -   node v15 removed;
 
 ## 1.2.1 (2021-04-20)
 
-### Raw commits log
+**Raw commits log**
 
 -   v19.2.0;
 
 ## 1.2.0 (2021-04-13)
 
-### Raw commits log
+**Raw commits log**
 
 -   uwc v19.1.0;
 
 ## 1.1.0 (2021-04-11)
 
-### Raw commits log
+**Raw commits log**
 
 -   deps removed;
 -   v19.0.0;
