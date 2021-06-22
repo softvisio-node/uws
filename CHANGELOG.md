@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.2.8 (2021-06-22)
+
+Fixed:
+
+-   changelog updated;
+
 ### 1.2.7 (2021-06-05)
 
 Changed:
