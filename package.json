@@ -14,9 +14,9 @@
     "license": "ISC",
     "author": "<zdm@softvisio.net>",
     "exports": {
-        ".": "./uws.js"
+        ".": "./lib/uws.js"
     },
-    "types": "./index.d.ts",
+    "types": "./lib/index.d.ts",
     "engines": {
         "node": ">=16.0.0",
         "npm": ">=7.10.0"

@@ -14,14 +14,18 @@
  * limitations under the License.
  */
 
-/** Native type representing a raw uSockets struct us_listen_socket.
+/** Native type representing a raw uSockets struct us_listen_socket_t.
  * Careful with this one, it is entirely unchecked and native so invalid usage will blow up.
  */
 export interface us_listen_socket {}
 
-/** Native type representing a raw uSockets struct us_socket_context_t.
- * Used while upgrading a WebSocket manually.
+/** Native type representing a raw uSockets struct us_socket_t.
+ * Careful with this one, it is entirely unchecked and native so invalid usage will blow up.
  */
+export interface us_socket {}
+
+/** Native type representing a raw uSockets struct us_socket_context_t.
+ * Used while upgrading a WebSocket manually. */
 export interface us_socket_context_t {}
 
 /** Recognized string types, things C++ can read and understand as strings.
@@ -145,7 +149,7 @@ export interface HttpResponse {
     /** Ends this response by copying the contents of body. */
     end( body?: RecognizedString ): HttpResponse;
 
-    /** Ends this response, or tries to, by streaming appropriately sized chunks of body. Use in conjunction with onWritable. Returns tuple [ok, hasResponded]. */
+    /** Ends this response, or tries to, by streaming appropriately sized chunks of body. Use in conjunction with onWritable. Returns tuple [ok, hasResponded].*/
     tryEnd( fullBodyOrChunk: RecognizedString, totalSize: number ): [boolean, boolean];
 
     /** Immediately force closes the connection. Any onAborted callback will run. */
@@ -163,11 +167,10 @@ export interface HttpResponse {
     /** Every HttpResponse MUST have an attached abort handler IF you do not respond
      * to it immediately inside of the callback. Returning from an Http request handler
      * without attaching (by calling onAborted) an abort handler is ill-use and will termiante.
-     * When this event emits, the response has been aborted and may not be used.
-     */
+     * When this event emits, the response has been aborted and may not be used. */
     onAborted( handler: () => void ): HttpResponse;
 
-    /** Handler for reading data from POST and such requests. You MUST copy the data of chunk if isLast is not true. We Neuter ArrayBuffers on return, making it zero length. */
+    /** Handler for reading data from POST and such requests. You MUST copy the data of chunk if isLast is not true. We Neuter ArrayBuffers on return, making it zero length.*/
     onData( handler: ( chunk: ArrayBuffer, isLast: boolean ) => void ): HttpResponse;
 
     /** Returns the remote IP address in binary format (4 or 16 bytes). */
@@ -341,6 +344,15 @@ export interface TemplatedApp {
 
     /** Returns number of subscribers for this topic. */
     numSubscribers( topic: RecognizedString ): number;
+
+    /** Adds a server name. */
+    addServerName( hostname: string, options: AppOptions ): TemplatedApp;
+
+    /** Removes a server name. */
+    removeServerName( hostname: string ): TemplatedApp;
+
+    /** Registers a synchronous callback on missing server names. See /examples/ServerName.js. */
+    missingServerName( cb: ( hostname: string ) => void ): TemplatedApp;
 }
 
 /** Constructs a non-SSL app. An app is your starting point where you attach behavior to URL routes.
@@ -353,6 +365,9 @@ export function SSLApp( options: AppOptions ): TemplatedApp;
 
 /** Closes a uSockets listen socket. */
 export function us_listen_socket_close( listenSocket: us_listen_socket ): void;
+
+/** Gets local port of socket (or listenSocket) or -1. */
+export function us_socket_local_port( socket: us_socket ): number;
 
 export interface MultipartField {
     data: ArrayBuffer;
