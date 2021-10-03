@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-empty-interface, no-unused-vars, no-var, @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-empty-interface, no-unused-vars, no-var, @typescript-eslint/no-explicit-any, @softvisio/camelcase */
 
 /*
  * Authored by Alex Hultman, 2018-2021.
