@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.13.0 (2021-12-16)
+
+Features:
+
+-   feat: uws v25.6.0
+
 ### 1.12.0 (2021-12-07)
 
 Features:
