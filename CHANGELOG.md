@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.13.1 (2022-01-02)
+
+Fixes:
+
+-   fix: bindings
+
 ### 1.13.0 (2021-12-16)
 
 Features:
