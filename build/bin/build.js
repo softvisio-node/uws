@@ -17,12 +17,8 @@ const cwd = path.dirname( resolve( "uws/package.json", import.meta.url ) );
 
 const gitHubApi = new GitHubApi( process.env.GITHUB_TOKEN );
 
-console.log( process.env.GITHUB_TOKEN );
-
 const release = await gitHubApi.getReleaseByTagName( REPO, TAG );
 if ( !release.ok ) process.exit( 1 );
-
-console.log( release );
 
 for ( const file of glob( "*.node", { cwd, "sync": true } ) ) {
     const res = await gitHubApi.updateReleaseAsset( REPO, release.data.id, await repack( path.join( cwd, file ) ) );
@@ -33,11 +29,10 @@ async function repack ( _path ) {
     const [platform, arch, version] = path.basename( _path ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" ),
         name = `node-v${version}-${platform}-${arch}.node.gz`;
 
-    console.log( "---", name );
-
     return new Promise( resolve => {
         fs.createReadStream( _path )
             .pipe( zlib.createGzip() )
-            .buffer( buffer => resolve( new File( { name, "content": buffer } ) ) );
+            .buffer()
+            .then( buffer => resolve( new File( { name, "content": buffer } ) ) );
     } );
 }
