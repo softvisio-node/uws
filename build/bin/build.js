@@ -21,13 +21,19 @@ const release = await gitHubApi.getReleaseByTagName( REPO, TAG );
 if ( !release.ok ) process.exit( 1 );
 
 for ( const file of glob( "*.node", { cwd, "sync": true } ) ) {
-    const res = await gitHubApi.updateReleaseAsset( REPO, release.data.id, await repack( path.join( cwd, file ) ) );
+    const upload = await repack( path.join( cwd, file ) );
+
+    if ( !upload ) continue;
+
+    const res = await gitHubApi.updateReleaseAsset( REPO, release.data.id, upload );
     if ( !res.ok ) process.exit( 1 );
 }
 
 async function repack ( _path ) {
     const [platform, arch, version] = path.basename( _path ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" ),
         name = `node-v${version}-${platform}-${arch}.node.gz`;
+
+    if ( version !== process.versions.modules ) return;
 
     return new Promise( resolve => {
         fs.createReadStream( _path )
