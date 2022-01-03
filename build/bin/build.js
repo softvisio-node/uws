@@ -27,7 +27,7 @@ for ( const file of glob( "*.node", { cwd, "sync": true } ) ) {
 
 async function repack ( _path ) {
     const [platform, arch, version] = path.basename( _path ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" ),
-        name = `node-v${version}-${platform}-${arch}.node`;
+        name = `node-v${version}-${platform}-${arch}.node.gz`;
 
     return new Promise( resolve => {
         fs.createReadStream( _path )
