@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.0.2 (2022-01-03)
+
+Fixes:
+
+-   fix: bindings renamed to binaries
+
 ### 2.0.1 (2022-01-03)
 
 Fixes:
