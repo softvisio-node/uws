@@ -13,7 +13,7 @@ import fs from "fs";
 import zlib from "zlib";
 
 console.log( "-----------------" );
-process.exit();
+process.exit( 0 );
 
 const REPO = "softvisio/sqlite";
 const TAG = "data";
