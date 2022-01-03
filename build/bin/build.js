@@ -33,7 +33,7 @@ async function repack ( _path ) {
     const [platform, arch, version] = path.basename( _path ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" ),
         name = `node-v${version}-${platform}-${arch}.node.gz`;
 
-    if ( version !== process.versions.modules ) return;
+    if ( Number( version ) !== process.versions.modules ) return;
 
     return new Promise( resolve => {
         fs.createReadStream( _path )
