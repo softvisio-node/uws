@@ -17,6 +17,9 @@
         ".": "./lib/uws.js"
     },
     "types": "./lib/index.d.ts",
+    "scripts": {
+        "install": "node bin/install.mjs"
+    },
     "engines": {
         "node": ">=16.0.0",
         "npm": ">=7.10.0"
