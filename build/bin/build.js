@@ -12,6 +12,9 @@ import AdmZip from "adm-zip";
 import fs from "fs";
 import zlib from "zlib";
 
+console.log( "-----------------" );
+process.exit();
+
 const REPO = "softvisio/sqlite";
 const TAG = "data";
 const sqliteUrl = "https://www.sqlite.org/2021/sqlite-amalgamation-3370100.zip";
