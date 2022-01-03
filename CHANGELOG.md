@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.0.3 (2022-01-03)
+
+Fixes:
+
+-   fix: use latest core for build
+
 ### 2.0.2 (2022-01-03)
 
 Fixes:
