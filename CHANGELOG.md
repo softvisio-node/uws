@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.0.0 (2022-01-03)
+
+Breaking changes:
+
+-   feat!: bindings
+
+Migration:
+
 ### 1.13.1 (2022-01-02)
 
 Fixes:
