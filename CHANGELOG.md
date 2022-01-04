@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.0.5 (2022-01-04)
+
+No notable changes since the previous release.
+
 ### 2.0.4 (2022-01-04)
 
 Fixes:
