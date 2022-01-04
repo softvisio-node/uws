@@ -6,7 +6,7 @@
 
 Repacked version of [uWebSocket.js](https://github.com/uNetworking/uWebSockets.js).
 
-[https://github.com/softvisio/uws/releases/tag/data](https://github.com/softvisio/uws/releases/tag/data)
+Pre-compiled binaries: [https://github.com/softvisio/uws/releases/tag/data](https://github.com/softvisio/uws/releases/tag/data)
 
 ## Install
 
