@@ -1,7 +1,3 @@
-<!-- !!! DO NOT EDIT, THIS FILE IS GENERATED AUTOMATICALLY !!!  -->
-
-> :information_source: Please, see the full project documentation here: [https://softvisio.github.io/uws/](https://softvisio.github.io/uws/).
-
 # Introduction
 
 Repacked version of [uWebSocket.js](https://github.com/uNetworking/uWebSockets.js).
