@@ -8,6 +8,9 @@ import glob from "#core/glob";
 import File from "#core/file";
 import fs from "fs";
 import zlib from "zlib";
+import env from "#core/env";
+
+env.loadUserEnv();
 
 const REPO = "softvisio/uws";
 const TAG = "data";
