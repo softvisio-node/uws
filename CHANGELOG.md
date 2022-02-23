@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.0.7 (2022-02-23)
+
+Fixes:
+
+-   fix: load user env
+
 ### 2.0.6 (2022-02-21)
 
 Fixes:
