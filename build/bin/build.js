@@ -14,6 +14,7 @@ env.loadUserEnv();
 
 const REPO = "softvisio/uws";
 const TAG = "data";
+const ARCHITECTURES = new Set( ["x65"] );
 
 // find uws location
 const cwd = path.dirname( resolve( "uws/package.json", import.meta.url ) );
@@ -36,7 +37,7 @@ async function repack ( _path ) {
     const [platform, arch, version] = path.basename( _path ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" ),
         name = `node-v${version}-${platform}-${arch}.node.gz`;
 
-    if ( version !== process.versions.modules ) return;
+    if ( version !== process.versions.modules || !ARCHITECTURES.has( arch ) ) return;
 
     return new Promise( resolve => {
         fs.createReadStream( _path )
