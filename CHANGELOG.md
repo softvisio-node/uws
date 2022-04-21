@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.0.11 (2022-04-21)
+
+Fixes:
+
+-   fix: build script
+
 ### 2.0.10 (2022-04-20)
 
 Fixes:
