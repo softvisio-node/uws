@@ -14,7 +14,7 @@ env.loadUserEnv();
 
 const REPO = "softvisio/uws";
 const TAG = "data";
-const ARCHITECTURES = new Set( ["x65"] );
+const ARCHITECTURES = new Set( ["x64"] );
 
 // find uws location
 const cwd = path.dirname( resolve( "uws/package.json", import.meta.url ) );
@@ -36,8 +36,6 @@ for ( const file of glob( "*.node", { cwd, "sync": true } ) ) {
 async function repack ( _path ) {
     const [platform, arch, version] = path.basename( _path ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" ),
         name = `node-v${version}-${platform}-${arch}.node.gz`;
-
-    console.log( "---", arch );
 
     if ( version !== process.versions.modules || !ARCHITECTURES.has( arch ) ) return;
 
