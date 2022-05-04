@@ -17,7 +17,7 @@ const TAG = "data";
 const ARCHITECTURES = new Set( ["x64"] );
 
 // find uws location
-const cwd = path.dirname( resolve( "uws/package.json", import.meta.url ) );
+const cwd = path.dirname( resolve( "uws", import.meta.url ) );
 
 const gitHubApi = new GitHubApi( process.env.GITHUB_TOKEN );
 
