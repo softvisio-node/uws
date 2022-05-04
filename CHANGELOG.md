@@ -1,5 +1,12 @@
 # Changelog
 
+### 2.0.12 (2022-05-04)
+
+Fixes:
+
+-   fix: build
+-   fix: index.ts
+
 ### 2.0.11 (2022-04-21)
 
 Fixes:
