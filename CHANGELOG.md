@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.2.1 (2022-10-19)
+
+Fixes:
+
+-   fix: http keep-alive workaround
+
 ### 2.2.0 (2022-10-11)
 
 Features:
