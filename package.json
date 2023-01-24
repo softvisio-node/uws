@@ -2,14 +2,14 @@
     "name": "@softvisio/uws",
     "version": "2.3.2",
     "description": "uWebsocket.js re-packed",
-    "homepage": "https://softvisio.github.io/uws/",
+    "homepage": "https://softvisio-node.github.io/uws/",
     "bugs": {
-        "url": "https://github.com/softvisio/uws/issues",
+        "url": "https://github.com/softvisio-node/uws/issues",
         "email": "zdm <zdm@softvisio.net>"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/softvisio/uws.git"
+        "url": "https://github.com/softvisio-node/uws.git"
     },
     "license": "ISC",
     "author": "zdm <zdm@softvisio.net>",
