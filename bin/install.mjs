@@ -4,7 +4,7 @@ import https from "https";
 import zlib from "zlib";
 import fs from "fs";
 
-const url = new URL( "https://github.com/softvisio/uws/releases/download/data/" );
+const url = new URL( "https://github.com/softvisio-node/uws/releases/download/data/" );
 
 await get( url, `node-v${process.versions.modules}-${process.platform}-${process.arch}.node` );
 

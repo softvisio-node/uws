@@ -12,7 +12,7 @@ import env from "#core/env";
 
 env.loadUserEnv();
 
-const REPO = "softvisio/uws";
+const REPO = "softvisio-node/uws";
 const TAG = "data";
 const ARCHITECTURES = new Set( ["x64"] );
 
