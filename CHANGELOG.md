@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.3.7 (2023-03-23)
+
+Fixes:
+
+-   fix: glob spi
+
 ### 2.3.6 (2023-03-08)
 
 Fixes:
