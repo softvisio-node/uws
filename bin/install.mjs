@@ -17,10 +17,10 @@ if ( process.platform === "win32" ) {
 async function get ( url, file ) {
     process.stdout.write( `Downloading: ${file} ... ` );
 
-    const res = await fetch( url + file + ".gz" );
+    const res = await fetch( url + file + ".gz11" );
 
     if ( !res.ok ) {
-        console.log( "FAILED" );
+        console.log( res.status + " " + +res.statusText );
 
         process.exit( 1 );
     }
