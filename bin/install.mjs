@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import fs from "node:fs";
-import stream from "node:stream";
+import { Readable } from "node:stream";
+import { pipeline } from "node:stream/promises";
 import zlib from "node:zlib";
 
 const url = new URL( "https://github.com/softvisio-node/uws/releases/download/data/" );
@@ -26,8 +27,15 @@ async function get ( url, file ) {
     else {
         fs.mkdirSync( "lib/binaries", { "recursive": true } );
 
-        stream.compose( stream.Readable.fromWeb( res.body ), zlib.createGunzip(), fs.createWriteStream( `lib/binaries/${file}` ) );
+        const e = await pipeline( Readable.fromWeb( res.body ), zlib.createGunzip(), fs.createWriteStream( `lib/binaries/${file}` ) ).catch( e => e );
 
-        console.log( "OK" );
+        if ( e ) {
+            console.log( e + "" );
+
+            process.exit( 1 );
+        }
+        else {
+            console.log( "OK" );
+        }
     }
 }
