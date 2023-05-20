@@ -26,7 +26,7 @@ async function get ( url, file ) {
     else {
         fs.mkdirSync( "lib/binaries", { "recursive": true } );
 
-        await stream.compose( stream.Readable.fromWeb( res.body ), zlib.createGunzip(), fs.createWriteStream( `lib/binaries/${file}` ) );
+        stream.compose( stream.Readable.fromWeb( res.body ), zlib.createGunzip(), fs.createWriteStream( `lib/binaries/${file}` ) );
 
         console.log( "OK" );
     }
