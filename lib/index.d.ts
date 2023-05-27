@@ -190,9 +190,11 @@ export interface HttpResponse {
      *
      * Example usage:
      *
+     * ```
      * res.cork(() => {
      *   res.writeStatus("200 OK").writeHeader("Some", "Value").write("Hello world!");
      * });
+     * ```
      */
     cork( cb: () => void ): HttpResponse;
 
@@ -231,7 +233,7 @@ export interface HttpRequest {
     forEach( cb: ( key: string, value: string ) => void ): void;
 
     /** Setting yield to true is to say that this route handler did not handle the route, causing the router to continue looking for a matching route handler, or fail. */
-    setYield( yield: boolean ): HttpRequest;
+    setYield( _yield: boolean ): HttpRequest;
 }
 
 /** A structure holding settings and handlers for a WebSocket URL route handler. */
@@ -263,13 +265,13 @@ export interface WebSocketBehavior<UserData> {
     /** Upgrade handler used to intercept HTTP upgrade requests and potentially upgrade to WebSocket.
      * See UpgradeAsync and UpgradeSync example files.
      */
-    upgrade?: ( res: HttpResponse, req: HttpRequest, context: us_socket_context_t ) => void;
+    upgrade?: ( res: HttpResponse, req: HttpRequest, context: us_socket_context_t ) => void | Promise<void>;
 
     /** Handler for new WebSocket connection. WebSocket is valid from open to close, no errors. */
-    open?: ( ws: WebSocket<UserData> ) => void;
+    open?: ( ws: WebSocket<UserData> ) => void | Promise<void>;
 
     /** Handler for a WebSocket message. Messages are given as ArrayBuffer no matter if they are binary or not. Given ArrayBuffer is valid during the lifetime of this callback (until first await or return) and will be neutered. */
-    message?: ( ws: WebSocket<UserData>, message: ArrayBuffer, isBinary: boolean ) => void;
+    message?: ( ws: WebSocket<UserData>, message: ArrayBuffer, isBinary: boolean ) => void | Promise<void>;
 
     /** Handler for when WebSocket backpressure drains. Check ws.getBufferedAmount(). Use this to guide / drive your backpressure throttling. */
     drain?: ( ws: WebSocket<UserData> ) => void;
@@ -311,43 +313,43 @@ export enum ListenOptions {
 export interface TemplatedApp {
 
     /** Listens to hostname & port. Callback hands either false or a listen socket. */
-    listen( host: RecognizedString, port: number, cb: ( listenSocket: us_listen_socket ) => void ): TemplatedApp;
+    listen( host: RecognizedString, port: number, cb: ( listenSocket: us_listen_socket ) => void | Promise<void> ): TemplatedApp;
 
     /** Listens to port. Callback hands either false or a listen socket. */
-    listen( port: number, cb: ( listenSocket: any ) => void ): TemplatedApp;
+    listen( port: number, cb: ( listenSocket: any ) => void | Promise<void> ): TemplatedApp;
 
     /** Listens to port and sets Listen Options. Callback hands either false or a listen socket. */
-    listen( port: number, options: ListenOptions, cb: ( listenSocket: us_listen_socket | false ) => void ): TemplatedApp;
+    listen( port: number, options: ListenOptions, cb: ( listenSocket: us_listen_socket | false ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers an HTTP GET handler matching specified URL pattern. */
-    get( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
+    get( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers an HTTP POST handler matching specified URL pattern. */
-    post( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
+    post( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers an HTTP OPTIONS handler matching specified URL pattern. */
-    options( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
+    options( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers an HTTP DELETE handler matching specified URL pattern. */
-    del( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
+    del( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers an HTTP PATCH handler matching specified URL pattern. */
-    patch( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
+    patch( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers an HTTP PUT handler matching specified URL pattern. */
-    put( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
+    put( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers an HTTP HEAD handler matching specified URL pattern. */
-    head( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
+    head( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers an HTTP CONNECT handler matching specified URL pattern. */
-    connect( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
+    connect( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers an HTTP TRACE handler matching specified URL pattern. */
-    trace( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
+    trace( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers an HTTP handler matching specified URL pattern on any HTTP method. */
-    any( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void ): TemplatedApp;
+    any( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
 
     /** Registers a handler matching specified URL pattern where WebSocket upgrade requests are caught. */
     ws<UserData>( pattern: RecognizedString, behavior: WebSocketBehavior<UserData> ): TemplatedApp;
@@ -360,6 +362,9 @@ export interface TemplatedApp {
 
     /** Adds a server name. */
     addServerName( hostname: string, options: AppOptions ): TemplatedApp;
+
+    /** Browse to SNI domain. Used together with .get, .post and similar to attach routes under SNI domains. */
+    domain( domain: string ): TemplatedApp;
 
     /** Removes a server name. */
     removeServerName( hostname: string ): TemplatedApp;
