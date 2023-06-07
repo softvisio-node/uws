@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.1 (2023-06-07)
+
+Fixes:
+
+-   fix: handle install error
+
 ### 2.4.0 (2023-05-27)
 
 Features:
