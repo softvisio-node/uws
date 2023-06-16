@@ -24,7 +24,7 @@ const gitHubApi = new GitHubApi( process.env.GITHUB_TOKEN );
 const release = await gitHubApi.getReleaseByTagName( REPO, TAG );
 if ( !release.ok ) process.exit( 1 );
 
-for ( const file of glob( "/*.node", { cwd } ) ) {
+for ( const file of glob( "*.node", { cwd } ) ) {
     const upload = await repack( path.join( cwd, file ) );
 
     if ( !upload ) continue;
