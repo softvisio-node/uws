@@ -30,7 +30,7 @@ class ExternalResource extends ExternalResourcesBuilder {
     }
 
     async _build ( location ) {
-        fs.copyFileSync( this.#file, location + "/" + this.#name );
+        fs.copyFileSync( this.#file, location + "/uws.node" );
 
         return result( 200 );
     }
