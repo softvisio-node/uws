@@ -10,17 +10,17 @@ const id = "softvisio-node/uws/resources";
 
 class ExternalResource extends ExternalResourcesBuilder {
     #file;
-    #name;
+    name;
 
     constructor ( file, name ) {
         super();
 
         this.#file = file;
-        this.#name = name;
+        this.name = name;
     }
 
     get id () {
-        return id + "/" + this.#name;
+        return id + "/" + this.name;
     }
 
     // XXX
@@ -29,7 +29,10 @@ class ExternalResource extends ExternalResourcesBuilder {
     }
 
     async _build ( location ) {
-        fs.cpSync( this.#file, location + "/" + this.#name );
+        fs.copyFileSync( this.#file, location + "/" + this.name );
+
+        // console.log( this.#file );
+        // console.log( location + "/" + this.name );
 
         return result( 200 );
     }
