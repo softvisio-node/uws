@@ -1,5 +1,12 @@
 # Changelog
 
+### 2.4.8 (2023-07-11)
+
+Fixes:
+
+-   fix: resources
+-   fix: string location
+
 ### 2.4.7 (2023-07-11)
 
 Fixes:
