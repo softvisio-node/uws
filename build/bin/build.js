@@ -14,20 +14,15 @@ const cwd = path.dirname( resolve( "uws", import.meta.url ) );
 
 const meta = { "version": readConfig( cwd + "/package.json" ).version };
 
-var name;
-
 class ExternalResource extends ExternalResourcesBuilder {
     #file;
+    #name;
 
-    constructor ( file, name1 ) {
-        super();
+    constructor ( file, name ) {
+        super( id + "/" + name );
 
         this.#file = file;
-        name = name1;
-    }
-
-    get id () {
-        return id + "/" + name;
+        this.#name = name;
     }
 
     // XXX
@@ -36,7 +31,7 @@ class ExternalResource extends ExternalResourcesBuilder {
     }
 
     async _build ( location ) {
-        fs.copyFileSync( this.#file, location + "/" + name );
+        fs.copyFileSync( this.#file, location + "/" + this.#name );
 
         return result( 200 );
     }
