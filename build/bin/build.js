@@ -25,9 +25,8 @@ class ExternalResource extends ExternalResourcesBuilder {
         this.#name = name;
     }
 
-    // XXX
     async _getEtag () {
-        return result( 200, new Date() );
+        return result( 200, await this._getFileHash( this.#file ) );
     }
 
     async _build ( location ) {
