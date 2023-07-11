@@ -53,5 +53,6 @@ for ( const file of glob( "*.node", { cwd } ) ) {
     const resource = new ExternalResource( cwd + "/" + file, name );
 
     const res = await resource.build();
+
     if ( !res.ok ) process.exit( 1 );
 }
