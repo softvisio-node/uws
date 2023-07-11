@@ -1,5 +1,12 @@
 # Changelog
 
+### 2.4.6 (2023-07-11)
+
+Fixes:
+
+-   fix: resources
+-   fix: resources buildes
+
 ### 2.4.5 (2023-07-06)
 
 Fixes:
