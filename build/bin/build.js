@@ -1,11 +1,27 @@
 #!/usr/bin/env node
 
+import Cli from "#core/cli";
 import { resolve } from "#core/utils";
 import glob from "#core/glob";
 import fs from "node:fs";
 import path from "node:path";
 import ExternalResourcesBuilder from "#core/external-resources/builder";
 import { readConfig } from "#core/config";
+
+const CLI = {
+    "title": "Update resources",
+    "options": {
+        "force": {
+            "description": "Force build",
+            "default": false,
+            "schema": {
+                "type": "boolean",
+            },
+        },
+    },
+};
+
+await Cli.parse( CLI );
 
 const id = "softvisio-node/uws/resources";
 
@@ -51,7 +67,7 @@ for ( const file of glob( "*.node", { cwd } ) ) {
 
     const resource = new ExternalResource( cwd + "/" + file, name );
 
-    const res = await resource.build();
+    const res = await resource.build( { "force": process.cli.options.force } );
 
     if ( !res.ok ) process.exit( 1 );
 }
