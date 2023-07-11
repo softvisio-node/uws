@@ -5,22 +5,29 @@ import glob from "#core/glob";
 import fs from "node:fs";
 import path from "node:path";
 import ExternalResourcesBuilder from "#core/external-resources/builder";
+import { readConfig } from "#core/config";
 
 const id = "softvisio-node/uws/resources";
 
+// find uws location
+const cwd = path.dirname( resolve( "uws", import.meta.url ) );
+
+const meta = { "version": readConfig( cwd + "/package.json" ).version };
+
+var name;
+
 class ExternalResource extends ExternalResourcesBuilder {
     #file;
-    name;
 
-    constructor ( file, name ) {
+    constructor ( file, name1 ) {
         super();
 
         this.#file = file;
-        this.name = name;
+        name = name1;
     }
 
     get id () {
-        return id + "/" + this.name;
+        return id + "/" + name;
     }
 
     // XXX
@@ -29,22 +36,17 @@ class ExternalResource extends ExternalResourcesBuilder {
     }
 
     async _build ( location ) {
-        fs.copyFileSync( this.#file, location + "/" + this.name );
-
-        // console.log( this.#file );
-        // console.log( location + "/" + this.name );
+        fs.copyFileSync( this.#file, location + "/" + name );
 
         return result( 200 );
     }
 
-    // XXX
-    async _getMeta () {}
+    async _getMeta () {
+        return meta;
+    }
 }
 
 const ARCHITECTURES = new Set( ["x64"] );
-
-// find uws location
-const cwd = path.dirname( resolve( "uws", import.meta.url ) );
 
 for ( const file of glob( "*.node", { cwd } ) ) {
     const [platform, arch, version] = path.basename( file ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" );
