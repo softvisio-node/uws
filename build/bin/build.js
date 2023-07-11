@@ -1,48 +1,57 @@
 #!/usr/bin/env node
 
-import "#core/stream";
 import { resolve } from "#core/utils";
-import path from "path";
-import GitHubApi from "#core/api/github";
 import glob from "#core/glob";
-import File from "#core/file";
-import fs from "fs";
-import zlib from "zlib";
-import env from "#core/env";
+import fs from "node:fs";
+import path from "node:path";
+import ExternalResourcesBuilder from "#core/external-resources/builder";
 
-env.loadUserEnv();
+const id = "softvisio-node/uws/resources";
 
-const REPO = "softvisio-node/uws";
-const TAG = "data";
+class ExternalResource extends ExternalResourcesBuilder {
+    #file;
+    #name;
+
+    constructor ( file, name ) {
+        super();
+
+        this.#file = file;
+        this.#name = name;
+    }
+
+    get id () {
+        return id + "/" + this.#name;
+    }
+
+    // XXX
+    async _getEtag () {
+        return result( 200, new Date() );
+    }
+
+    async _build ( location ) {
+        fs.cpSync( this.#file, location + "/" + this.#name );
+
+        return result( 200 );
+    }
+
+    // XXX
+    async _getMeta () {}
+}
+
 const ARCHITECTURES = new Set( ["x64"] );
 
 // find uws location
 const cwd = path.dirname( resolve( "uws", import.meta.url ) );
 
-const gitHubApi = new GitHubApi( process.env.GITHUB_TOKEN );
-
-const release = await gitHubApi.getReleaseByTagName( REPO, TAG );
-if ( !release.ok ) process.exit( 1 );
-
 for ( const file of glob( "*.node", { cwd } ) ) {
-    const upload = await repack( path.join( cwd, file ) );
+    const [platform, arch, version] = path.basename( file ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" );
 
-    if ( !upload ) continue;
+    if ( version !== process.versions.modules || !ARCHITECTURES.has( arch ) ) continue;
 
-    const res = await gitHubApi.updateReleaseAsset( REPO, release.data.id, upload );
+    const name = `node-v${version}-${platform}-${arch}.node`;
+
+    const resource = new ExternalResource( cwd + "/" + file, name );
+
+    const res = await resource.build();
     if ( !res.ok ) process.exit( 1 );
-}
-
-async function repack ( _path ) {
-    const [platform, arch, version] = path.basename( _path ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" ),
-        name = `node-v${version}-${platform}-${arch}.node.gz`;
-
-    if ( version !== process.versions.modules || !ARCHITECTURES.has( arch ) ) return;
-
-    return new Promise( resolve => {
-        fs.createReadStream( _path )
-            .pipe( zlib.createGzip() )
-            .buffer()
-            .then( buffer => resolve( new File( { name, buffer } ) ) );
-    } );
 }
