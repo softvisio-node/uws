@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.7 (2023-07-11)
+
+Fixes:
+
+-   fix: resources
+
 ### 2.4.6 (2023-07-11)
 
 Fixes:
