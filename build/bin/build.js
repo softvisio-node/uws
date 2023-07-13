@@ -28,7 +28,7 @@ const id = "softvisio-node/uws/resources";
 // find uws location
 const cwd = path.dirname( resolve( "uws", import.meta.url ) );
 
-const meta = { "version": readConfig( cwd + "/package.json" ).version };
+const meta = { "uwsVersion": readConfig( cwd + "/package.json" ).version };
 
 class ExternalResource extends ExternalResourcesBuilder {
     #file;
