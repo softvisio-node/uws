@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.11 (2023-07-13)
+
+Fixes:
+
+-   fix: meta version
+
 ### 2.4.10 (2023-07-13)
 
 Fixes:
