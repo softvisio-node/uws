@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.14 (2023-07-13)
+
+Fixes:
+
+-   fix: external resources builder
+
 ### 2.4.13 (2023-07-13)
 
 Fixes:
