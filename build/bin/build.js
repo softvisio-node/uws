@@ -3,10 +3,12 @@
 import Cli from "#core/cli";
 import { resolve } from "#core/utils";
 import glob from "#core/glob";
-import fs from "node:fs";
 import path from "node:path";
 import ExternalResourceBuilder from "#core/external-resource-builder";
 import { readConfig } from "#core/config";
+import Uws from "#lib/uws";
+
+const ARCHITECTURES = new Set( ["x64"] );
 
 const CLI = {
     "title": "Update resources",
@@ -23,40 +25,12 @@ const CLI = {
 
 await Cli.parse( CLI );
 
-const id = "softvisio-node/uws/resources";
-
 // find uws location
 const cwd = path.dirname( resolve( "uws", import.meta.url ) );
 
 const meta = { "uws": "v" + readConfig( cwd + "/package.json" ).version };
 
-class ExternalResource extends ExternalResourceBuilder {
-    #file;
-    #name;
-
-    constructor ( file, name ) {
-        super( id + "/" + name );
-
-        this.#file = file;
-        this.#name = name;
-    }
-
-    async _getEtag () {
-        return result( 200, await this._getFileHash( this.#file ) );
-    }
-
-    async _build ( location ) {
-        fs.copyFileSync( this.#file, location + "/uws.node" );
-
-        return result( 200 );
-    }
-
-    async _getMeta () {
-        return meta;
-    }
-}
-
-const ARCHITECTURES = new Set( ["x64"] );
+const resources = [];
 
 for ( const file of glob( "*.node", { cwd } ) ) {
     const [platform, arch, version] = path.basename( file ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" );
@@ -65,9 +39,13 @@ for ( const file of glob( "*.node", { cwd } ) ) {
 
     const name = `node-v${version}-${platform}-${arch}.node`;
 
-    const resource = new ExternalResource( cwd + "/" + file, name );
+    const resource = new Uws( cwd + "/" + file, name, meta );
 
-    const res = await resource.build( { "force": process.cli.options.force } );
+    resources.push( resource );
+}
+
+if ( resources.length ) {
+    const res = await ExternalResourceBuilder.build( resources, { "force": process.cli.options.force } );
 
     if ( !res.ok ) process.exit( 1 );
 }
