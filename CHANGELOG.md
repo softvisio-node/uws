@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.12 (2023-07-13)
+
+Fixes:
+
+-   fix: gitignore
+
 ### 2.4.11 (2023-07-13)
 
 Fixes:
