@@ -5,7 +5,7 @@ import { resolve } from "#core/utils";
 import glob from "#core/glob";
 import fs from "node:fs";
 import path from "node:path";
-import ExternalResourcesBuilder from "#core/external-resources/builder";
+import ExternalResourceBuilder from "#core/external-resource-builder";
 import { readConfig } from "#core/config";
 
 const CLI = {
@@ -30,7 +30,7 @@ const cwd = path.dirname( resolve( "uws", import.meta.url ) );
 
 const meta = { "uws": "v" + readConfig( cwd + "/package.json" ).version };
 
-class ExternalResource extends ExternalResourcesBuilder {
+class ExternalResource extends ExternalResourceBuilder {
     #file;
     #name;
 
