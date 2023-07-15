@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-empty-interface, no-unused-vars, no-var, @typescript-eslint/no-explicit-any, @softvisio/camelcase */
+/* eslint-disable no-unused-vars, no-var, @typescript-eslint/no-explicit-any, @softvisio/camelcase */
 
 /*
  * Authored by Alex Hultman, 2018-2021.
@@ -313,13 +313,16 @@ export enum ListenOptions {
 export interface TemplatedApp {
 
     /** Listens to hostname & port. Callback hands either false or a listen socket. */
-    listen( host: RecognizedString, port: number, cb: ( listenSocket: us_listen_socket ) => void | Promise<void> ): TemplatedApp;
+    listen( host: RecognizedString, port: number, cb: ( listenSocket: us_listen_socket | false ) => void | Promise<void> ): TemplatedApp;
 
     /** Listens to port. Callback hands either false or a listen socket. */
-    listen( port: number, cb: ( listenSocket: any ) => void | Promise<void> ): TemplatedApp;
+    listen( port: number, cb: ( listenSocket: us_listen_socket | false ) => void | Promise<void> ): TemplatedApp;
 
     /** Listens to port and sets Listen Options. Callback hands either false or a listen socket. */
     listen( port: number, options: ListenOptions, cb: ( listenSocket: us_listen_socket | false ) => void | Promise<void> ): TemplatedApp;
+
+    /** Listens to unix socket. Callback hands either false or a listen socket. */
+    listen_unix( cb: ( listenSocket: us_listen_socket ) => void | Promise<void>, path: RecognizedString ): TemplatedApp;
 
     /** Registers an HTTP GET handler matching specified URL pattern. */
     get( pattern: RecognizedString, handler: ( res: HttpResponse, req: HttpRequest ) => void | Promise<void> ): TemplatedApp;
