@@ -13,6 +13,7 @@
     },
     "license": "ISC",
     "author": "zdm <zdm@softvisio.net>",
+    "type": "module",
     "exports": {
         ".": "./lib/uws.js"
     },
@@ -24,10 +25,10 @@
         "/src"
     ],
     "scripts": {
-        "install": "node bin/install.mjs"
+        "install": "node bin/install.js"
     },
     "dependencies": {
-        "@softvisio/external-resources": "^1.1.5"
+        "@softvisio/utils": "^1.1.5"
     },
     "engines": {
         "node": ">=16.0.0",
