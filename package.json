@@ -27,7 +27,7 @@
     "scripts": {
         "install": "node bin/install.js"
     },
-    "dependencies": {
+    "peerDependencies": {
         "@softvisio/utils": "^1.1.5"
     },
     "engines": {
