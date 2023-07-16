@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.20 (2023-07-16)
+
+Fixes:
+
+-   fix: resoources
+
 ### 2.4.19 (2023-07-16)
 
 Fixes:
