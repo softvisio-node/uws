@@ -1,18 +1,15 @@
 import ExternalResourceBuilder from "#core/external-resource-builder";
 import fs from "node:fs";
 
-const id = "softvisio-node/uws/resources";
-
 export default class ExternalResource extends ExternalResourceBuilder {
     #file;
     #name;
     #meta;
 
     constructor ( file, name, meta ) {
-        super( id + "/" + name );
+        super( ["softvisio-node/uws/resources", name] );
 
         this.#file = file;
-        this.#name = name;
         this.#meta = meta;
     }
 

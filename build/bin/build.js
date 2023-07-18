@@ -33,13 +33,11 @@ const meta = { "uws": "v" + readConfig( cwd + "/package.json" ).version };
 const resources = [];
 
 for ( const file of glob( "*.node", { cwd } ) ) {
-    const [platform, arch, version] = path.basename( file ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" );
+    const [platform, architecture, node] = path.basename( file ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" );
 
-    if ( version !== process.versions.modules || !ARCHITECTURES.has( arch ) ) continue;
+    if ( node !== process.versions.modules || !ARCHITECTURES.has( architecture ) ) continue;
 
-    const name = `node-v${version}-${platform}-${arch}.node`;
-
-    const resource = new Uws( cwd + "/" + file, name, meta );
+    const resource = new Uws( cwd + "/" + file, { node, platform, architecture }, meta );
 
     resources.push( resource );
 }
