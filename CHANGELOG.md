@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.25 (2023-10-20)
+
+Fixes:
+
+-   fix: build node lts
+
 ### 2.4.24 (2023-07-30)
 
 Fixes:
