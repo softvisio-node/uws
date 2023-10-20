@@ -35,7 +35,7 @@ const resources = [];
 for ( const file of glob( "*.node", { cwd } ) ) {
     const [platform, architecture, node] = path.basename( file ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" );
 
-    if ( node !== process.versions.modules || !ARCHITECTURES.has( architecture ) ) continue;
+    if ( !ARCHITECTURES.has( architecture ) ) continue;
 
     const resource = new Uws( cwd + "/" + file, { node, platform, architecture }, meta );
 
