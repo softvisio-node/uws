@@ -14,7 +14,9 @@ export default class ExternalResource extends ExternalResourceBuilder {
     }
 
     async _getEtag () {
-        return result( 200, await this._getFileHash( this.#file ) );
+        const hash = await this._getFileHash( this.#file );
+
+        return result( 200, `uws:${this.#meta.uws},hash:${hash}` );
     }
 
     async _build ( location ) {
