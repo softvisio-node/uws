@@ -14,7 +14,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
     }
 
     async _getEtag () {
-        return result( 200, await this._getFileHash( this.#file ) );
+        return result( 200, fs.createReadStream( this.#file ) );
     }
 
     async _build ( location ) {
