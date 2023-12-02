@@ -6,8 +6,11 @@ export default class ExternalResource extends ExternalResourceBuilder {
     #name;
     #meta;
 
-    constructor ( file, name, meta ) {
-        super( ["softvisio-node/uws/resources", name] );
+    constructor ( file, id, meta ) {
+        super( {
+            ...id,
+            "id": "softvisio-node/uws/resources/",
+        } );
 
         this.#file = file;
         this.#meta = meta;

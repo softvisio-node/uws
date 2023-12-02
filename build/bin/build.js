@@ -37,7 +37,15 @@ for ( const file of glob( "*.node", { cwd } ) ) {
 
     if ( !ARCHITECTURES.has( architecture ) ) continue;
 
-    const resource = new Uws( cwd + "/" + file, { node, platform, architecture }, meta );
+    const resource = new Uws(
+        cwd + "/" + file,
+        {
+            node,
+            platform,
+            architecture,
+        },
+        meta
+    );
 
     resources.push( resource );
 }
