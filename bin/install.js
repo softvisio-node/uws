@@ -3,14 +3,14 @@
 import externalResources from "@softvisio/utils/external-resources";
 
 externalResources.add( {
-    "id": "softvisio-node/uws/resources",
+    "id": "softvisio-node/uws",
     "node": true,
 } );
 
 // under windows download linux binaries for vmware
 if ( process.platform === "win32" ) {
     externalResources.add( {
-        "id": "softvisio-node/uws/resources",
+        "id": "softvisio-node/uws",
         "node": true,
         "platform": "linux",
     } );
