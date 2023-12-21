@@ -226,8 +226,8 @@ export interface HttpRequest {
     /** Returns the raw querystring (the part of URL after ? sign) or empty string. */
     getQuery(): string;
 
-    /** Returns a decoded query parameter value or empty string. */
-    getQuery( key: string ): string;
+    /** Returns a decoded query parameter value or undefined. */
+    getQuery( key: string ): string | undefined;
 
     /** Loops over all headers. */
     forEach( cb: ( key: string, value: string ) => void ): void;
@@ -374,6 +374,9 @@ export interface TemplatedApp {
 
     /** Registers a synchronous callback on missing server names. See /examples/ServerName.js. */
     missingServerName( cb: ( hostname: string ) => void ): TemplatedApp;
+
+    /** Closes all sockets including listen sockets. This will forcefully terminate all connections. */
+    close(): TemplatedApp;
 }
 
 /** Constructs a non-SSL app. An app is your starting point where you attach behavior to URL routes.
