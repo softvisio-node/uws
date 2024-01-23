@@ -8,7 +8,7 @@ import ExternalResourceBuilder from "#core/external-resource-builder";
 import { readConfig } from "#core/config";
 import Uws from "#lib/uws";
 
-const ARCHITECTURES = new Set( ["x64"] );
+const ARCHITECTURES = new Set( [ "x64" ] );
 
 const CLI = {
     "title": "Update resources",
@@ -33,7 +33,7 @@ const meta = { "uws": "v" + readConfig( cwd + "/package.json" ).version };
 const resources = [];
 
 for ( const file of glob( "*.node", { cwd } ) ) {
-    const [platform, architecture, node] = path.basename( file ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" );
+    const [ platform, architecture, node ] = path.basename( file ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" );
 
     if ( !ARCHITECTURES.has( architecture ) ) continue;
 
