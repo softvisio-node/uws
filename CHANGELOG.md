@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.44 (2024-02-21)
+
+Fixes:
+
+-   fix: require
+
 ### 2.4.43 (2024-02-18)
 
 Fixes:
