@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.50 (2024-06-16)
+
+Fixes:
+
+-   fix: uws index.ts
+
 ### 2.4.49 (2024-06-16)
 
 Fixes:
