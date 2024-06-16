@@ -243,7 +243,7 @@ export interface WebSocketBehavior<UserData> {
     maxPayloadLength?: number;
 
     /** Whether or not we should automatically close the socket when a message is dropped due to backpressure. Defaults to false. */
-    closeOnBackpressureLimit?: number;
+    closeOnBackpressureLimit?: boolean;
 
     /** Maximum number of minutes a WebSocket may be connected before being closed by the server. 0 disables the feature. */
     maxLifetime?: number;
