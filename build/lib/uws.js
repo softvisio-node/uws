@@ -17,7 +17,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
         this.#meta = meta;
     }
 
-    async _getEtag () {
+    async _getEtag ( { etag, buildDate, meta } ) {
         return result( 200, fs.createReadStream( this.#file ) );
     }
 
