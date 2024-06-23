@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.4.51 (2024-06-23)
+
+Fixes:
+
+-   fix: resources builder
+
 ### 2.4.50 (2024-06-16)
 
 Fixes:
