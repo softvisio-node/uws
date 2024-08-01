@@ -3,7 +3,6 @@ import fs from "node:fs";
 
 export default class ExternalResource extends ExternalResourceBuilder {
     #file;
-    #name;
     #meta;
 
     constructor ( file, id, meta ) {
