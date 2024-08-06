@@ -211,8 +211,8 @@ export interface HttpRequest {
     /** Returns the lowercased header value or empty string. */
     getHeader( lowerCaseKey: RecognizedString ): string;
 
-    /** Returns the parsed parameter at index. Corresponds to route. */
-    getParameter( index: number ): string;
+    /** Returns the parsed parameter at index. Corresponds to route. Can also take the name of the parameter. */
+    getParameter( index: number | RecognizedString ): string | undefined;
 
     /** Returns the URL including initial /slash */
     getUrl(): string;

@@ -23,6 +23,6 @@
     },
     "dependencies": {
         "@softvisio/core": "^7.83.13",
-        "uws": "github:uNetworking/uWebSockets.js#semver:=20.45.0"
+        "uws": "github:uNetworking/uWebSockets.js#semver:=20.46.0"
     }
 }
