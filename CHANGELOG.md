@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.5.0 (2024-08-24)
+
+Features:
+
+-   feat: uws v20.48.0
+
 ### 2.4.60 (2024-08-14)
 
 No notable changes since the previous release.
