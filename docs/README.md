@@ -10,4 +10,6 @@ npm i @softvisio/uws
 
 ## Usage
 
-<!-- Tell about how to use the project, give code examples -->
+```javascript
+import uws from "@softvisio/uws";
+```
