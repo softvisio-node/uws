@@ -1,5 +1,5 @@
-import ExternalResourceBuilder from "#core/external-resource-builder";
 import fs from "node:fs";
+import ExternalResourceBuilder from "#core/external-resource-builder";
 
 export default class ExternalResource extends ExternalResourceBuilder {
     #file;

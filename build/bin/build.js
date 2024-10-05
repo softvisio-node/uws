@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-import Cli from "#core/cli";
-import { resolve } from "#core/utils";
-import glob from "#core/glob";
 import path from "node:path";
-import ExternalResourceBuilder from "#core/external-resource-builder";
+import Cli from "#core/cli";
 import { readConfig } from "#core/config";
+import ExternalResourceBuilder from "#core/external-resource-builder";
+import glob from "#core/glob";
+import { resolve } from "#core/utils";
 import Uws from "#lib/uws";
 
 const ARCHITECTURES = new Set( [ "x64" ] );
