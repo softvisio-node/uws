@@ -1,5 +1,12 @@
 # Changelog
 
+### 2.6.1 (2024-10-09)
+
+Fixes:
+
+-   fix: dependabot
+-   fix: install script
+
 ### 2.6.0 (2024-09-24)
 
 Features:
