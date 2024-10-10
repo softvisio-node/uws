@@ -11,10 +11,10 @@ import Uws from "#lib/uws";
 const ARCHITECTURES = new Set( [ "x64" ] );
 
 const CLI = {
-    "title": "Update resources",
+    "title": "Build resources",
     "options": {
         "force": {
-            "description": "Force build",
+            "description": "force build",
             "default": false,
             "schema": {
                 "type": "boolean",
