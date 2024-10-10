@@ -19,6 +19,6 @@ jobs:
           apt update
           apt install -y git
           cd build
-          npm i --ignore-scripts
+          npm install --ignore-scripts
           npm run build
         shell: bash
