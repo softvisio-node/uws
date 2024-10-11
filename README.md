@@ -1,6 +1,6 @@
 <!-- !!! DO NOT EDIT, THIS FILE IS GENERATED AUTOMATICALLY !!!  -->
 
-> :information_source: Please, see the full project documentation here: [https://softvisio-node.github.io/uws/](https://softvisio-node.github.io/uws/).
+> :information_source: Please, see the full project documentation here:<br>[https://softvisio-node.github.io/uws/](https://softvisio-node.github.io/uws/)
 
 # Introduction
 
@@ -9,7 +9,7 @@ Repacked version of [uWebSocket.js](https://github.com/uNetworking/uWebSockets.j
 ## Install
 
 ```shell
-npm i @softvisio/uws
+npm install @softvisio/uws
 ```
 
 ## Usage
