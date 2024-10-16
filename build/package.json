@@ -1,4 +1,5 @@
 {
+    "name": "@softvisio/uws/build",
     "version": "2.6.2",
     "private": true,
     "homepage": "https://github.com/softvisio-node/uws",
