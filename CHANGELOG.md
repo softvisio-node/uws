@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.6.5 (2024-10-18)
+
+No notable changes since the previous release.
+
+[Full list of the changes](https://github.com/softvisio-node/uws/compare/v2.6.4...v2.6.5)
+
 ### 2.6.4 (2024-10-16)
 
 No notable changes since the previous release.
