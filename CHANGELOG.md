@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.6.7 (2024-10-24)
+
+Other changes:
+
+-   chore: update package metadata
+
+[Compare with the previous release: v2.6.6 ... v2.6.7](https://github.com/softvisio-node/uws/compare/v2.6.6...v2.6.7)
+
 ### 2.6.6 (2024-10-20)
 
 No notable changes since the previous release.
