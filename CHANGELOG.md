@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.6.8 (2024-10-29)
+
+Other changes:
+
+-   chore: update docs
+
+[Compare with the previous release: v2.6.7 ... v2.6.8](https://github.com/softvisio-node/uws/compare/v2.6.7...v2.6.8)
+
 ### 2.6.7 (2024-10-24)
 
 Other changes:
