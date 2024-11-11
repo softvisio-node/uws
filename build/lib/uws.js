@@ -16,7 +16,8 @@ export default class ExternalResource extends ExternalResourceBuilder {
         this.#meta = meta;
     }
 
-    async _getEtag ( { etag, buildDate, meta } ) {
+    // protected
+    async _getEtag () {
         return result( 200, fs.createReadStream( this.#file ) );
     }
 
@@ -27,6 +28,6 @@ export default class ExternalResource extends ExternalResourceBuilder {
     }
 
     async _getMeta () {
-        return this.#meta;
+        return result( 200, this.#meta );
     }
 }
