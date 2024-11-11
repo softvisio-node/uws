@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.6.11 (2024-11-11)
+
+Other changes:
+
+-   chore: refactor external resource builder
+
+[Compare with the previous release: v2.6.10 ... v2.6.11](https://github.com/softvisio-node/uws/compare/v2.6.10...v2.6.11)
+
 ### 2.6.10 (2024-11-10)
 
 Other changes:
