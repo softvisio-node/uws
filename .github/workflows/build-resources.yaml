@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          apt update
-          apt install -y git
+          apt-get update
+          apt-get install -y git
           cd build
           npm install --ignore-scripts
           npm run build
