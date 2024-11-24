@@ -1,5 +1,17 @@
 # Changelog
 
+### 2.7.0 (2024-11-24)
+
+Features:
+
+-   feat: uws v20.50.0
+
+Other changes:
+
+-   chore: fix apt in github workflow
+
+[Compare with the previous release: v2.6.11 ... v2.7.0](https://github.com/softvisio-node/uws/compare/v2.6.11...v2.7.0)
+
 ### 2.6.11 (2024-11-11)
 
 Other changes:
