@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.8.2 (2024-11-27)
+
+Other changes:
+
+- chore: update package metadata
+
+[Compare with the previous release: v2.8.1 ... v2.8.2](https://github.com/softvisio-node/uws/compare/v2.8.1...v2.8.2)
+
 ### 2.8.1 (2024-11-27)
 
 Other changes:
