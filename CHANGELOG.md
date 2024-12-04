@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.8.4 (2024-12-04)
+
+Other changes:
+
+- chore: update package dependencies
+
+[Compare with the previous release: v2.8.3 ... v2.8.4](https://github.com/softvisio-node/uws/compare/v2.8.3...v2.8.4)
+
 ### 2.8.3 (2024-11-27)
 
 No changes since the previous release.
