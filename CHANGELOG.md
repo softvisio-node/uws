@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.8.5 (2024-12-04)
+
+No changes since the previous release.
+
+[Compare with the previous release: v2.8.4 ... v2.8.5](https://github.com/softvisio-node/uws/compare/v2.8.4...v2.8.5)
+
 ### 2.8.4 (2024-12-04)
 
 Other changes:
