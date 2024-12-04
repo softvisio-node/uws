@@ -28,6 +28,6 @@
         "install": "node bin/install.js"
     },
     "peerDependencies": {
-        "@softvisio/utils": "^1.1.5"
+        "@softvisio/utils": "^2.0.0"
     }
 }
