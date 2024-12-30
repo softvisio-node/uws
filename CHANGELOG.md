@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.8.8 (2024-12-30)
+
+Other changes:
+
+- chore: add external resource autoUpdate option
+
+[Compare with the previous release: v2.8.7 ... v2.8.8](https://github.com/softvisio-node/uws/compare/v2.8.7...v2.8.8)
+
 ### 2.8.7 (2024-12-07)
 
 Other changes:
