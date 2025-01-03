@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.9.0 (2025-01-03)
+
+Features:
+
+- feat: add async glob
+
+[Compare with the previous release: v2.8.8 ... v2.9.0](https://github.com/softvisio-node/uws/compare/v2.8.8...v2.9.0)
+
 ### 2.8.8 (2024-12-30)
 
 Other changes:
