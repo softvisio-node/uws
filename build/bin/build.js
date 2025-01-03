@@ -4,7 +4,7 @@ import path from "node:path";
 import Cli from "#core/cli";
 import { readConfig } from "#core/config";
 import ExternalResourceBuilder from "#core/external-resource-builder";
-import glob from "#core/glob";
+import { globSync } from "#core/glob";
 import { resolve } from "#core/utils";
 import Uws from "#lib/uws";
 
@@ -32,7 +32,7 @@ const meta = { "uws": "v" + readConfig( cwd + "/package.json" ).version };
 
 const resources = [];
 
-for ( const file of glob( "*.node", { cwd } ) ) {
+for ( const file of globSync( "*.node", { cwd } ) ) {
     const [ platform, architecture, node ] = path.basename( file ).replace( "uws_", "" ).replace( ".node", "" ).split( "_" );
 
     if ( !ARCHITECTURES.has( architecture ) ) continue;
