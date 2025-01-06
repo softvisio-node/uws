@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.9.2 (2025-01-06)
+
+Other changes:
+
+- chore: remove linux platform installer
+
+[Compare with the previous release: v2.9.1 ... v2.9.2](https://github.com/softvisio-node/uws/compare/v2.9.1...v2.9.2)
+
 ### 2.9.1 (2025-01-06)
 
 Other changes:
