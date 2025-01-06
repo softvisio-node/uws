@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.9.1 (2025-01-06)
+
+Other changes:
+
+- chore: fix external resource location option
+
+[Compare with the previous release: v2.9.0 ... v2.9.1](https://github.com/softvisio-node/uws/compare/v2.9.0...v2.9.1)
+
 ### 2.9.0 (2025-01-03)
 
 Features:
