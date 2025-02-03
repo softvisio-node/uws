@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.10.0 (2025-02-03)
+
+Features:
+
+- feat: refactor read / write config
+
+Compare with the previous release: [`v2.9.4...v2.10.0`](https://github.com/softvisio-node/uws/compare/v2.9.4...v2.10.0)
+
 ### 2.9.4 (2025-01-08)
 
 Other changes:
