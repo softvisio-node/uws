@@ -28,7 +28,7 @@ await Cli.parse( CLI );
 // find uws location
 const cwd = path.dirname( resolve( "uws", import.meta.url ) );
 
-const meta = { "uws": "v" + readConfig( cwd + "/package.json" ).version };
+const meta = { "uws": "v" + ( await readConfig( cwd + "/package.json" ) ).version };
 
 const resources = [];
 
