@@ -1,24 +1,24 @@
 name: build-resources
 
 on:
-    workflow_dispatch:
-    release:
-        types:
-            - released
+  workflow_dispatch:
+  release:
+    types:
+      - released
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        container:
-            image: ghcr.io/zerocluster/node
-            env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        steps:
-            - uses: actions/checkout@v4
-            - run: |
-                  apt-get update
-                  apt-get install -y git
-                  cd build
-                  npm install --ignore-scripts
-                  npm run build
-              shell: bash
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/zerocluster/node
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          apt-get update
+          apt-get install -y git
+          cd build
+          npm install --ignore-scripts
+          npm run build
+        shell: bash
