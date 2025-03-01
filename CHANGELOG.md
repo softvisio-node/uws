@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.10.4 (2025-03-01)
+
+Other changes:
+
+- chore: update package metadata
+
+Compare with the previous release: [`v2.10.3...v2.10.4`](https://github.com/softvisio-node/uws/compare/v2.10.3...v2.10.4)
+
 ### 2.10.3 (2025-02-27)
 
 Other changes:
