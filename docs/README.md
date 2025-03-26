@@ -4,7 +4,7 @@ Repacked version of [uWebSocket.js](https://github.com/uNetworking/uWebSockets.j
 
 ## Install
 
-```shell
+```sh
 npm install @softvisio/uws
 ```
 
