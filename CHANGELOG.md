@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.11.0 (2025-05-09)
+
+Features:
+
+- feat: update uws v20.52.0
+
+Compare with the previous release: [`v2.10.7...v2.11.0`](https://github.com/softvisio-node/uws/compare/v2.10.7...v2.11.0)
+
 ### 2.10.7 (2025-03-26)
 
 Other changes:
