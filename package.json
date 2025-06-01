@@ -1,6 +1,6 @@
 {
     "name": "@softvisio/uws",
-    "version": "2.11.0",
+    "version": "2.11.1",
     "description": "uWebsocket.js re-packed",
     "homepage": "https://softvisio-node.github.io/uws/",
     "bugs": {
