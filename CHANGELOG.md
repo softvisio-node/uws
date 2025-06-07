@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.11.2 (2025-06-07)
+
+**Other changes:**
+
+- \[PATCH] chore: update cli config (👬 zdm)
+
+Compare with the previous release: [v2.11.1](https://github.com/softvisio-node/uws/compare/v2.11.1...v2.11.2)
+
 ### v2.11.1 (2025-06-01)
 
 **Other changes:**
