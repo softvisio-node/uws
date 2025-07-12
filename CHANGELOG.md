@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.11.3 (2025-07-12)
+
+**Other changes:**
+
+- chore(metadata): update package metadata (● [44c2a4d](https://github.com/softvisio-node/uws/commit/44c2a4d); 👬 zdm)
+
+Compare with the previous release: [v2.11.2](https://github.com/softvisio-node/uws/compare/v2.11.2...v2.11.3)
+
 ### v2.11.2 (2025-06-07)
 
 **Other changes:**
