@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.11.4 (2025-07-16)
+
+**Other changes:**
+
+- docs: update (● [02f81e9](https://github.com/softvisio-node/uws/commit/02f81e9); 👬 zdm)
+
+Compare with the previous release: [v2.11.3](https://github.com/softvisio-node/uws/compare/v2.11.3...v2.11.4)
+
 ### v2.11.3 (2025-07-12)
 
 **Other changes:**
