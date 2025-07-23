@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.11.7 (2025-07-23)
+
+**Other changes:**
+
+- style: update .npmrc (● [2b2654e](https://github.com/softvisio-node/uws/commit/2b2654e); 👬 zdm)
+
+Compare with the previous release: [v2.11.6](https://github.com/softvisio-node/uws/compare/v2.11.6...v2.11.7)
+
 ### v2.11.6 (2025-07-23)
 
 **Bug fixes:**
