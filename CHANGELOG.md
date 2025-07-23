@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.11.6 (2025-07-23)
+
+**Bug fixes:**
+
+- \[PATCH] fix: update editorconfig (● [660e484](https://github.com/softvisio-node/uws/commit/660e484); 👬 zdm)
+
+Compare with the previous release: [v2.11.5](https://github.com/softvisio-node/uws/compare/v2.11.5...v2.11.6)
+
 ### v2.11.5 (2025-07-22)
 
 **Bug fixes:**
