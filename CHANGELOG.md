@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.11.8 (2025-08-12)
+
+**Other changes:**
+
+- build(deps): bunp actions/checkout\@v5 (● [68dbab4](https://github.com/softvisio-node/uws/commit/68dbab4); 👬 zdm)
+
+Compare with the previous release: [v2.11.7](https://github.com/softvisio-node/uws/compare/v2.11.7...v2.11.8)
+
 ### v2.11.7 (2025-07-23)
 
 **Other changes:**
