@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.11.10 (2025-10-20)
+
+**Other changes:**
+
+- build(deps): bump uws\@20.54.0 (● [94964f6](https://github.com/softvisio-node/uws/commit/94964f6); 👬 zdm)
+
+Compare with the previous release: [v2.11.9](https://github.com/softvisio-node/uws/compare/v2.11.9...v2.11.10)
+
 ### v2.11.9 (2025-10-20)
 
 **Other changes:**
