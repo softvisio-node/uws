@@ -1,6 +1,6 @@
 {
     "name": "@softvisio/uws-build",
-    "version": "2.11.11",
+    "version": "2.11.12",
     "private": true,
     "homepage": "https://softvisio-node.github.io/uws/",
     "bugs": {
