@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.11.13 (2025-11-21)
+
+**Other changes:**
+
+- build(deps): bump actions/checkout\@v6 (● [fa3fba9](https://github.com/softvisio-node/uws/commit/fa3fba9); 👬 zdm)
+
+Compare with the previous release: [v2.11.12](https://github.com/softvisio-node/uws/compare/v2.11.12...v2.11.13)
+
 ### v2.11.12 (2025-11-05)
 
 **Other changes:**
