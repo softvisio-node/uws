@@ -1,5 +1,5 @@
 {
-    "name": "@softvisio/uws",
+    "name": "@c0rejs/uws",
     "version": "2.11.13",
     "description": "uWebsocket.js re-packed",
     "homepage": "https://softvisio-node.github.io/uws/",
@@ -28,6 +28,6 @@
         "install": "node bin/install.js"
     },
     "peerDependencies": {
-        "@softvisio/utils": "^2.0.0"
+        "@c0rejs/utils": "^2.0.0"
     }
 }
