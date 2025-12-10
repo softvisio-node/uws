@@ -1,5 +1,15 @@
 # Changelog
 
+### v2.11.14 (2025-12-10)
+
+**Other changes:**
+
+- build: migrate to c0rejs namespace (● [ccbf678](https://github.com/c0rejs/uws/commit/ccbf678), [fd68f0e](https://github.com/c0rejs/uws/commit/fd68f0e); 👬 zdm)
+
+- chore(metadata): update package metadata (● [ffa37b1](https://github.com/c0rejs/uws/commit/ffa37b1); 👬 zdm)
+
+Compare with the previous release: [v2.11.13](https://github.com/c0rejs/uws/compare/v2.11.13...v2.11.14)
+
 ### v2.11.13 (2025-11-21)
 
 **Other changes:**
