@@ -2,14 +2,14 @@
     "name": "@c0rejs/uws-build",
     "version": "2.11.13",
     "private": true,
-    "homepage": "https://softvisio-node.github.io/uws/",
+    "homepage": "https://c0rejs.github.io/uws/",
     "bugs": {
-        "url": "https://github.com/softvisio-node/uws/issues",
+        "url": "https://github.com/c0rejs/uws/issues",
         "email": "root <root@softvisio.net>"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/softvisio-node/uws.git",
+        "url": "git+https://github.com/c0rejs/uws.git",
         "directory": "build"
     },
     "license": "Proprietary Software",
