@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.11.18 (2025-12-10)
+
+**Other changes:**
+
+- build: migrate to c0rejs namespace (● [7d0dc36](https://github.com/c0rejs/uws/commit/7d0dc36); 👬 zdm)
+
+Compare with the previous release: [v2.11.17](https://github.com/c0rejs/uws/compare/v2.11.17...v2.11.18)
+
 ### v2.11.17 (2025-12-10)
 
 **Other changes:**
