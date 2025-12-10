@@ -1,6 +1,6 @@
 {
     "name": "@c0rejs/uws",
-    "version": "2.11.16",
+    "version": "2.11.17",
     "description": "uWebsocket.js re-packed",
     "homepage": "https://c0rejs.github.io/uws/",
     "bugs": {
