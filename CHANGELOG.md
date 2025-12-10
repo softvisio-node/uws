@@ -1,5 +1,11 @@
 # Changelog
 
+### v2.11.15 (2025-12-10)
+
+No changes since the previous release.
+
+Compare with the previous release: [v2.11.14](https://github.com/c0rejs/uws/compare/v2.11.14...v2.11.15)
+
 ### v2.11.14 (2025-12-10)
 
 **Other changes:**
