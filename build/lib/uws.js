@@ -8,7 +8,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
     constructor ( file, id, meta ) {
         super( {
             ...id,
-            "id": "softvisio-node/uws",
+            "id": "c0rejs/uws",
             "caller": import.meta.url,
         } );
 

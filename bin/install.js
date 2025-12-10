@@ -3,7 +3,7 @@
 import externalResources from "@c0rejs/utils/external-resources";
 
 externalResources.add( {
-    "id": "softvisio-node/uws",
+    "id": "c0rejs/uws",
     "node": true,
     "caller": import.meta.url,
 } );

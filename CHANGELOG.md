@@ -4,89 +4,89 @@
 
 **Other changes:**
 
-- build(deps): bump actions/checkout\@v6 (● [fa3fba9](https://github.com/softvisio-node/uws/commit/fa3fba9); 👬 zdm)
+- build(deps): bump actions/checkout\@v6 (● [fa3fba9](https://github.com/c0rejs/uws/commit/fa3fba9); 👬 zdm)
 
-Compare with the previous release: [v2.11.12](https://github.com/softvisio-node/uws/compare/v2.11.12...v2.11.13)
+Compare with the previous release: [v2.11.12](https://github.com/c0rejs/uws/compare/v2.11.12...v2.11.13)
 
 ### v2.11.12 (2025-11-05)
 
 **Other changes:**
 
-- build(deps): bump uws\@20.56.0 (● [5321d06](https://github.com/softvisio-node/uws/commit/5321d06); 👬 zdm)
+- build(deps): bump uws\@20.56.0 (● [5321d06](https://github.com/c0rejs/uws/commit/5321d06); 👬 zdm)
 
-Compare with the previous release: [v2.11.11](https://github.com/softvisio-node/uws/compare/v2.11.11...v2.11.12)
+Compare with the previous release: [v2.11.11](https://github.com/c0rejs/uws/compare/v2.11.11...v2.11.12)
 
 ### v2.11.11 (2025-10-21)
 
 **Other changes:**
 
-- build(deps): bump uws\@20.55.0 (● [ce022be](https://github.com/softvisio-node/uws/commit/ce022be); 👬 zdm)
+- build(deps): bump uws\@20.55.0 (● [ce022be](https://github.com/c0rejs/uws/commit/ce022be); 👬 zdm)
 
-Compare with the previous release: [v2.11.10](https://github.com/softvisio-node/uws/compare/v2.11.10...v2.11.11)
+Compare with the previous release: [v2.11.10](https://github.com/c0rejs/uws/compare/v2.11.10...v2.11.11)
 
 ### v2.11.10 (2025-10-20)
 
 **Other changes:**
 
-- build(deps): bump uws\@20.54.0 (● [94964f6](https://github.com/softvisio-node/uws/commit/94964f6); 👬 zdm)
+- build(deps): bump uws\@20.54.0 (● [94964f6](https://github.com/c0rejs/uws/commit/94964f6); 👬 zdm)
 
-Compare with the previous release: [v2.11.9](https://github.com/softvisio-node/uws/compare/v2.11.9...v2.11.10)
+Compare with the previous release: [v2.11.9](https://github.com/c0rejs/uws/compare/v2.11.9...v2.11.10)
 
 ### v2.11.9 (2025-10-20)
 
 **Other changes:**
 
-- build(deps): bump uws\@20.53.0 (● [e2d403c](https://github.com/softvisio-node/uws/commit/e2d403c); 👬 zdm)
+- build(deps): bump uws\@20.53.0 (● [e2d403c](https://github.com/c0rejs/uws/commit/e2d403c); 👬 zdm)
 
-Compare with the previous release: [v2.11.8](https://github.com/softvisio-node/uws/compare/v2.11.8...v2.11.9)
+Compare with the previous release: [v2.11.8](https://github.com/c0rejs/uws/compare/v2.11.8...v2.11.9)
 
 ### v2.11.8 (2025-08-12)
 
 **Other changes:**
 
-- build(deps): bunp actions/checkout\@v5 (● [68dbab4](https://github.com/softvisio-node/uws/commit/68dbab4); 👬 zdm)
+- build(deps): bunp actions/checkout\@v5 (● [68dbab4](https://github.com/c0rejs/uws/commit/68dbab4); 👬 zdm)
 
-Compare with the previous release: [v2.11.7](https://github.com/softvisio-node/uws/compare/v2.11.7...v2.11.8)
+Compare with the previous release: [v2.11.7](https://github.com/c0rejs/uws/compare/v2.11.7...v2.11.8)
 
 ### v2.11.7 (2025-07-23)
 
 **Other changes:**
 
-- style: update .npmrc (● [2b2654e](https://github.com/softvisio-node/uws/commit/2b2654e); 👬 zdm)
+- style: update .npmrc (● [2b2654e](https://github.com/c0rejs/uws/commit/2b2654e); 👬 zdm)
 
-Compare with the previous release: [v2.11.6](https://github.com/softvisio-node/uws/compare/v2.11.6...v2.11.7)
+Compare with the previous release: [v2.11.6](https://github.com/c0rejs/uws/compare/v2.11.6...v2.11.7)
 
 ### v2.11.6 (2025-07-23)
 
 **Bug fixes:**
 
-- \[PATCH] fix: update editorconfig (● [660e484](https://github.com/softvisio-node/uws/commit/660e484); 👬 zdm)
+- \[PATCH] fix: update editorconfig (● [660e484](https://github.com/c0rejs/uws/commit/660e484); 👬 zdm)
 
-Compare with the previous release: [v2.11.5](https://github.com/softvisio-node/uws/compare/v2.11.5...v2.11.6)
+Compare with the previous release: [v2.11.5](https://github.com/c0rejs/uws/compare/v2.11.5...v2.11.6)
 
 ### v2.11.5 (2025-07-22)
 
 **Bug fixes:**
 
-- \[PATCH] fix: fix editorconfig (● [a1f58e6](https://github.com/softvisio-node/uws/commit/a1f58e6); 👬 zdm)
+- \[PATCH] fix: fix editorconfig (● [a1f58e6](https://github.com/c0rejs/uws/commit/a1f58e6); 👬 zdm)
 
-Compare with the previous release: [v2.11.4](https://github.com/softvisio-node/uws/compare/v2.11.4...v2.11.5)
+Compare with the previous release: [v2.11.4](https://github.com/c0rejs/uws/compare/v2.11.4...v2.11.5)
 
 ### v2.11.4 (2025-07-16)
 
 **Other changes:**
 
-- docs: update (● [02f81e9](https://github.com/softvisio-node/uws/commit/02f81e9); 👬 zdm)
+- docs: update (● [02f81e9](https://github.com/c0rejs/uws/commit/02f81e9); 👬 zdm)
 
-Compare with the previous release: [v2.11.3](https://github.com/softvisio-node/uws/compare/v2.11.3...v2.11.4)
+Compare with the previous release: [v2.11.3](https://github.com/c0rejs/uws/compare/v2.11.3...v2.11.4)
 
 ### v2.11.3 (2025-07-12)
 
 **Other changes:**
 
-- chore(metadata): update package metadata (● [44c2a4d](https://github.com/softvisio-node/uws/commit/44c2a4d); 👬 zdm)
+- chore(metadata): update package metadata (● [44c2a4d](https://github.com/c0rejs/uws/commit/44c2a4d); 👬 zdm)
 
-Compare with the previous release: [v2.11.2](https://github.com/softvisio-node/uws/compare/v2.11.2...v2.11.3)
+Compare with the previous release: [v2.11.2](https://github.com/c0rejs/uws/compare/v2.11.2...v2.11.3)
 
 ### v2.11.2 (2025-06-07)
 
@@ -94,7 +94,7 @@ Compare with the previous release: [v2.11.2](https://github.com/softvisio-node/u
 
 - \[PATCH] chore: update cli config (👬 zdm)
 
-Compare with the previous release: [v2.11.1](https://github.com/softvisio-node/uws/compare/v2.11.1...v2.11.2)
+Compare with the previous release: [v2.11.1](https://github.com/c0rejs/uws/compare/v2.11.1...v2.11.2)
 
 ### v2.11.1 (2025-06-01)
 
@@ -102,7 +102,7 @@ Compare with the previous release: [v2.11.1](https://github.com/softvisio-node/u
 
 - \[PATCH] chore: update docs (👬 zdm)
 
-Compare with the previous release: [v2.11.0](https://github.com/softvisio-node/uws/compare/v2.11.0...v2.11.1)
+Compare with the previous release: [v2.11.0](https://github.com/c0rejs/uws/compare/v2.11.0...v2.11.1)
 
 ### 2.11.0 (2025-05-09)
 
@@ -110,7 +110,7 @@ Features:
 
 - feat: update uws v20.52.0
 
-Compare with the previous release: [`v2.10.7...v2.11.0`](https://github.com/softvisio-node/uws/compare/v2.10.7...v2.11.0)
+Compare with the previous release: [`v2.10.7...v2.11.0`](https://github.com/c0rejs/uws/compare/v2.10.7...v2.11.0)
 
 ### 2.10.7 (2025-03-26)
 
@@ -118,7 +118,7 @@ Other changes:
 
 - chore: update markdown code tags
 
-Compare with the previous release: [`v2.10.6...v2.10.7`](https://github.com/softvisio-node/uws/compare/v2.10.6...v2.10.7)
+Compare with the previous release: [`v2.10.6...v2.10.7`](https://github.com/c0rejs/uws/compare/v2.10.6...v2.10.7)
 
 ### 2.10.6 (2025-03-04)
 
@@ -126,7 +126,7 @@ Other changes:
 
 - chore: update package metadata
 
-Compare with the previous release: [`v2.10.5...v2.10.6`](https://github.com/softvisio-node/uws/compare/v2.10.5...v2.10.6)
+Compare with the previous release: [`v2.10.5...v2.10.6`](https://github.com/c0rejs/uws/compare/v2.10.5...v2.10.6)
 
 ### 2.10.5 (2025-03-04)
 
@@ -134,7 +134,7 @@ Other changes:
 
 - chore: update package metadata
 
-Compare with the previous release: [`v2.10.4...v2.10.5`](https://github.com/softvisio-node/uws/compare/v2.10.4...v2.10.5)
+Compare with the previous release: [`v2.10.4...v2.10.5`](https://github.com/c0rejs/uws/compare/v2.10.4...v2.10.5)
 
 ### 2.10.4 (2025-03-01)
 
@@ -142,7 +142,7 @@ Other changes:
 
 - chore: update package metadata
 
-Compare with the previous release: [`v2.10.3...v2.10.4`](https://github.com/softvisio-node/uws/compare/v2.10.3...v2.10.4)
+Compare with the previous release: [`v2.10.3...v2.10.4`](https://github.com/c0rejs/uws/compare/v2.10.3...v2.10.4)
 
 ### 2.10.3 (2025-02-27)
 
@@ -150,7 +150,7 @@ Other changes:
 
 - chore: add editorconfig yaml
 
-Compare with the previous release: [`v2.10.2...v2.10.3`](https://github.com/softvisio-node/uws/compare/v2.10.2...v2.10.3)
+Compare with the previous release: [`v2.10.2...v2.10.3`](https://github.com/c0rejs/uws/compare/v2.10.2...v2.10.3)
 
 ### 2.10.2 (2025-02-26)
 
@@ -158,7 +158,7 @@ Other changes:
 
 - chore: update editorconfig
 
-Compare with the previous release: [`v2.10.1...v2.10.2`](https://github.com/softvisio-node/uws/compare/v2.10.1...v2.10.2)
+Compare with the previous release: [`v2.10.1...v2.10.2`](https://github.com/c0rejs/uws/compare/v2.10.1...v2.10.2)
 
 ### 2.10.1 (2025-02-19)
 
@@ -166,7 +166,7 @@ Other changes:
 
 - chore: update cli config
 
-Compare with the previous release: [`v2.10.0...v2.10.1`](https://github.com/softvisio-node/uws/compare/v2.10.0...v2.10.1)
+Compare with the previous release: [`v2.10.0...v2.10.1`](https://github.com/c0rejs/uws/compare/v2.10.0...v2.10.1)
 
 ### 2.10.0 (2025-02-03)
 
@@ -174,7 +174,7 @@ Features:
 
 - feat: refactor read / write config
 
-Compare with the previous release: [`v2.9.4...v2.10.0`](https://github.com/softvisio-node/uws/compare/v2.9.4...v2.10.0)
+Compare with the previous release: [`v2.9.4...v2.10.0`](https://github.com/c0rejs/uws/compare/v2.9.4...v2.10.0)
 
 ### 2.9.4 (2025-01-08)
 
@@ -182,7 +182,7 @@ Other changes:
 
 - chore: update package metadata
 
-[Compare with the previous release: v2.9.3 ... v2.9.4](https://github.com/softvisio-node/uws/compare/v2.9.3...v2.9.4)
+[Compare with the previous release: v2.9.3 ... v2.9.4](https://github.com/c0rejs/uws/compare/v2.9.3...v2.9.4)
 
 ### 2.9.3 (2025-01-08)
 
@@ -191,7 +191,7 @@ Other changes:
 - chore: fix external resource id
 - chore: fix resource id
 
-[Compare with the previous release: v2.9.2 ... v2.9.3](https://github.com/softvisio-node/uws/compare/v2.9.2...v2.9.3)
+[Compare with the previous release: v2.9.2 ... v2.9.3](https://github.com/c0rejs/uws/compare/v2.9.2...v2.9.3)
 
 ### 2.9.2 (2025-01-06)
 
@@ -199,7 +199,7 @@ Other changes:
 
 - chore: remove linux platform installer
 
-[Compare with the previous release: v2.9.1 ... v2.9.2](https://github.com/softvisio-node/uws/compare/v2.9.1...v2.9.2)
+[Compare with the previous release: v2.9.1 ... v2.9.2](https://github.com/c0rejs/uws/compare/v2.9.1...v2.9.2)
 
 ### 2.9.1 (2025-01-06)
 
@@ -207,7 +207,7 @@ Other changes:
 
 - chore: fix external resource location option
 
-[Compare with the previous release: v2.9.0 ... v2.9.1](https://github.com/softvisio-node/uws/compare/v2.9.0...v2.9.1)
+[Compare with the previous release: v2.9.0 ... v2.9.1](https://github.com/c0rejs/uws/compare/v2.9.0...v2.9.1)
 
 ### 2.9.0 (2025-01-03)
 
@@ -215,7 +215,7 @@ Features:
 
 - feat: add async glob
 
-[Compare with the previous release: v2.8.8 ... v2.9.0](https://github.com/softvisio-node/uws/compare/v2.8.8...v2.9.0)
+[Compare with the previous release: v2.8.8 ... v2.9.0](https://github.com/c0rejs/uws/compare/v2.8.8...v2.9.0)
 
 ### 2.8.8 (2024-12-30)
 
@@ -223,7 +223,7 @@ Other changes:
 
 - chore: add external resource autoUpdate option
 
-[Compare with the previous release: v2.8.7 ... v2.8.8](https://github.com/softvisio-node/uws/compare/v2.8.7...v2.8.8)
+[Compare with the previous release: v2.8.7 ... v2.8.8](https://github.com/c0rejs/uws/compare/v2.8.7...v2.8.8)
 
 ### 2.8.7 (2024-12-07)
 
@@ -231,7 +231,7 @@ Other changes:
 
 - chore: set yaml indent to 4 spaces
 
-[Compare with the previous release: v2.8.6 ... v2.8.7](https://github.com/softvisio-node/uws/compare/v2.8.6...v2.8.7)
+[Compare with the previous release: v2.8.6 ... v2.8.7](https://github.com/c0rejs/uws/compare/v2.8.6...v2.8.7)
 
 ### 2.8.6 (2024-12-04)
 
@@ -239,13 +239,13 @@ Other changes:
 
 - chore: update external resources path
 
-[Compare with the previous release: v2.8.5 ... v2.8.6](https://github.com/softvisio-node/uws/compare/v2.8.5...v2.8.6)
+[Compare with the previous release: v2.8.5 ... v2.8.6](https://github.com/c0rejs/uws/compare/v2.8.5...v2.8.6)
 
 ### 2.8.5 (2024-12-04)
 
 No changes since the previous release.
 
-[Compare with the previous release: v2.8.4 ... v2.8.5](https://github.com/softvisio-node/uws/compare/v2.8.4...v2.8.5)
+[Compare with the previous release: v2.8.4 ... v2.8.5](https://github.com/c0rejs/uws/compare/v2.8.4...v2.8.5)
 
 ### 2.8.4 (2024-12-04)
 
@@ -253,13 +253,13 @@ Other changes:
 
 - chore: update package dependencies
 
-[Compare with the previous release: v2.8.3 ... v2.8.4](https://github.com/softvisio-node/uws/compare/v2.8.3...v2.8.4)
+[Compare with the previous release: v2.8.3 ... v2.8.4](https://github.com/c0rejs/uws/compare/v2.8.3...v2.8.4)
 
 ### 2.8.3 (2024-11-27)
 
 No changes since the previous release.
 
-[Compare with the previous release: v2.8.2 ... v2.8.3](https://github.com/softvisio-node/uws/compare/v2.8.2...v2.8.3)
+[Compare with the previous release: v2.8.2 ... v2.8.3](https://github.com/c0rejs/uws/compare/v2.8.2...v2.8.3)
 
 ### 2.8.2 (2024-11-27)
 
@@ -267,7 +267,7 @@ Other changes:
 
 - chore: update package metadata
 
-[Compare with the previous release: v2.8.1 ... v2.8.2](https://github.com/softvisio-node/uws/compare/v2.8.1...v2.8.2)
+[Compare with the previous release: v2.8.1 ... v2.8.2](https://github.com/c0rejs/uws/compare/v2.8.1...v2.8.2)
 
 ### 2.8.1 (2024-11-27)
 
@@ -275,7 +275,7 @@ Other changes:
 
 - chore: update package metadata
 
-[Compare with the previous release: v2.8.0 ... v2.8.1](https://github.com/softvisio-node/uws/compare/v2.8.0...v2.8.1)
+[Compare with the previous release: v2.8.0 ... v2.8.1](https://github.com/c0rejs/uws/compare/v2.8.0...v2.8.1)
 
 ### 2.8.0 (2024-11-25)
 
@@ -283,7 +283,7 @@ Features:
 
 - feat: uws v20.51.0
 
-[Compare with the previous release: v2.7.0 ... v2.8.0](https://github.com/softvisio-node/uws/compare/v2.7.0...v2.8.0)
+[Compare with the previous release: v2.7.0 ... v2.8.0](https://github.com/c0rejs/uws/compare/v2.7.0...v2.8.0)
 
 ### 2.7.0 (2024-11-24)
 
@@ -295,7 +295,7 @@ Other changes:
 
 - chore: fix apt in github workflow
 
-[Compare with the previous release: v2.6.11 ... v2.7.0](https://github.com/softvisio-node/uws/compare/v2.6.11...v2.7.0)
+[Compare with the previous release: v2.6.11 ... v2.7.0](https://github.com/c0rejs/uws/compare/v2.6.11...v2.7.0)
 
 ### 2.6.11 (2024-11-11)
 
@@ -303,7 +303,7 @@ Other changes:
 
 - chore: refactor external resource builder
 
-[Compare with the previous release: v2.6.10 ... v2.6.11](https://github.com/softvisio-node/uws/compare/v2.6.10...v2.6.11)
+[Compare with the previous release: v2.6.10 ... v2.6.11](https://github.com/c0rejs/uws/compare/v2.6.10...v2.6.11)
 
 ### 2.6.10 (2024-11-10)
 
@@ -311,7 +311,7 @@ Other changes:
 
 - chore: update package metadata
 
-[Compare with the previous release: v2.6.9 ... v2.6.10](https://github.com/softvisio-node/uws/compare/v2.6.9...v2.6.10)
+[Compare with the previous release: v2.6.9 ... v2.6.10](https://github.com/c0rejs/uws/compare/v2.6.9...v2.6.10)
 
 ### 2.6.9 (2024-11-07)
 
@@ -319,7 +319,7 @@ Other changes:
 
 - chore: update package metadata
 
-[Compare with the previous release: v2.6.8 ... v2.6.9](https://github.com/softvisio-node/uws/compare/v2.6.8...v2.6.9)
+[Compare with the previous release: v2.6.8 ... v2.6.9](https://github.com/c0rejs/uws/compare/v2.6.8...v2.6.9)
 
 ### 2.6.8 (2024-10-29)
 
@@ -327,7 +327,7 @@ Other changes:
 
 - chore: update docs
 
-[Compare with the previous release: v2.6.7 ... v2.6.8](https://github.com/softvisio-node/uws/compare/v2.6.7...v2.6.8)
+[Compare with the previous release: v2.6.7 ... v2.6.8](https://github.com/c0rejs/uws/compare/v2.6.7...v2.6.8)
 
 ### 2.6.7 (2024-10-24)
 
@@ -335,37 +335,37 @@ Other changes:
 
 - chore: update package metadata
 
-[Compare with the previous release: v2.6.6 ... v2.6.7](https://github.com/softvisio-node/uws/compare/v2.6.6...v2.6.7)
+[Compare with the previous release: v2.6.6 ... v2.6.7](https://github.com/c0rejs/uws/compare/v2.6.6...v2.6.7)
 
 ### 2.6.6 (2024-10-20)
 
 No notable changes since the previous release.
 
-[Full list of the changes](https://github.com/softvisio-node/uws/compare/v2.6.5...v2.6.6)
+[Full list of the changes](https://github.com/c0rejs/uws/compare/v2.6.5...v2.6.6)
 
 ### 2.6.5 (2024-10-18)
 
 No notable changes since the previous release.
 
-[Full list of the changes](https://github.com/softvisio-node/uws/compare/v2.6.4...v2.6.5)
+[Full list of the changes](https://github.com/c0rejs/uws/compare/v2.6.4...v2.6.5)
 
 ### 2.6.4 (2024-10-16)
 
 No notable changes since the previous release.
 
-[Full list of the changes](https://github.com/softvisio-node/uws/compare/v2.6.3...v2.6.4)
+[Full list of the changes](https://github.com/c0rejs/uws/compare/v2.6.3...v2.6.4)
 
 ### 2.6.3 (2024-10-16)
 
 No notable changes since the previous release.
 
-[Full list of the changes](https://github.com/softvisio-node/uws/compare/v2.6.2...v2.6.3)
+[Full list of the changes](https://github.com/c0rejs/uws/compare/v2.6.2...v2.6.3)
 
 ### 2.6.2 (2024-10-11)
 
 No notable changes since the previous release.
 
-[Full list of the changes](https://github.com/softvisio-node/uws/compare/v2.6.1...v2.6.2)
+[Full list of the changes](https://github.com/c0rejs/uws/compare/v2.6.1...v2.6.2)
 
 ### 2.6.1 (2024-10-09)
 
