@@ -17,6 +17,7 @@ jobs:
       image: ghcr.io/zerocluster/node
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v6
       - run: |
