@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.11.21 (2025-12-11)
+
+**Other changes:**
+
+- chore: add setup-npm action (● [1e27ab7](https://github.com/c0rejs/uws/commit/1e27ab7); 👬 zdm)
+
+Compare with the previous release: [v2.11.20](https://github.com/c0rejs/uws/compare/v2.11.20...v2.11.21)
+
 ### v2.11.20 (2025-12-11)
 
 **Bug fixes:**
